@@ -16,5 +16,26 @@ namespace FinalProject
         {
             InitializeComponent();
         }
+
+        private void addMovieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Add Movies EventHandler
+            FormAddMovies formAddMovies = new FormAddMovies();
+            formAddMovies.Show();
+        }
+
+        private void updateMovieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Update Movies EventHandler
+
+            FormUpdateMovies formUpdateMovies = new FormUpdateMovies();
+            formUpdateMovies.Show();
+        }
+
+        private void deleteMovieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDeleteMovies formDeleteMovies = new FormDeleteMovies();
+            formDeleteMovies.Show();
+        }
     }
 }

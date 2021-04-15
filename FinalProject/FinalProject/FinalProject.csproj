@@ -49,6 +49,12 @@
     <Compile Include="About.cs" />
     <Compile Include="AddMovie.cs" />
     <Compile Include="DeleteMovie.cs" />
+    <Compile Include="FormAddMovies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddMovies.Designer.cs">
+      <DependentUpon>FormAddMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
