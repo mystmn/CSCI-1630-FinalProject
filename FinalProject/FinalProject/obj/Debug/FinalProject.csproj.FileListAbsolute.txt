@@ -8,3 +8,13 @@ C:\Users\pc854032\source\repos\CSCI1630-FinalProject\FinalProject\FinalProject\o
 C:\Users\pc854032\source\repos\CSCI1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\pc854032\source\repos\CSCI1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\pc854032\source\repos\CSCI1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
+C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\bin\Debug\FinalProject.exe
+C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
+C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojAssemblyReference.cache
+C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\FinalProject.Main.resources
+C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\FinalProject.Properties.Resources.resources
+C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.GenerateResource.cache
+C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
+C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\FinalProject.exe
+C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\FinalProject.pdb

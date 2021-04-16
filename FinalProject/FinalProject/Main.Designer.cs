@@ -32,17 +32,17 @@ namespace FinalProject
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maintanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.labelMasterList = new System.Windows.Forms.Label();
             this.colMovieTitles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMovieYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMovieGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMovieRotten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMovieBoxOffice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelMasterList = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -75,12 +75,6 @@ namespace FinalProject
             this.maintanceToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.maintanceToolStripMenuItem.Text = "Maintenance";
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
-            this.toolStripMenuItem1.Text = "About";
-            // 
             // addMovieToolStripMenuItem
             // 
             this.addMovieToolStripMenuItem.Name = "addMovieToolStripMenuItem";
@@ -102,6 +96,12 @@ namespace FinalProject
             this.deleteMovieToolStripMenuItem.Text = "Delete Movie";
             this.deleteMovieToolStripMenuItem.Click += new System.EventHandler(this.deleteMovieToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
+            this.toolStripMenuItem1.Text = "About";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -117,16 +117,6 @@ namespace FinalProject
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(845, 297);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // labelMasterList
-            // 
-            this.labelMasterList.AutoSize = true;
-            this.labelMasterList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.75F, System.Drawing.FontStyle.Bold);
-            this.labelMasterList.Location = new System.Drawing.Point(12, 37);
-            this.labelMasterList.Name = "labelMasterList";
-            this.labelMasterList.Size = new System.Drawing.Size(181, 24);
-            this.labelMasterList.TabIndex = 2;
-            this.labelMasterList.Text = "Movies Master List";
             // 
             // colMovieTitles
             // 
@@ -160,6 +150,16 @@ namespace FinalProject
             this.colMovieBoxOffice.Name = "colMovieBoxOffice";
             this.colMovieBoxOffice.ReadOnly = true;
             this.colMovieBoxOffice.Width = 150;
+            // 
+            // labelMasterList
+            // 
+            this.labelMasterList.AutoSize = true;
+            this.labelMasterList.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.75F, System.Drawing.FontStyle.Bold);
+            this.labelMasterList.Location = new System.Drawing.Point(12, 37);
+            this.labelMasterList.Name = "labelMasterList";
+            this.labelMasterList.Size = new System.Drawing.Size(181, 24);
+            this.labelMasterList.TabIndex = 2;
+            this.labelMasterList.Text = "Movies Master List";
             // 
             // Main
             // 
