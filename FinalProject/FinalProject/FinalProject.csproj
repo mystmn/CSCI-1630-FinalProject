@@ -76,6 +76,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UpdateMovie.cs" />
+    <EmbeddedResource Include="FormAddMovies.resx">
+      <DependentUpon>FormAddMovies.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUpdateMovie.resx">
       <DependentUpon>FormUpdateMovie.cs</DependentUpon>
     </EmbeddedResource>
