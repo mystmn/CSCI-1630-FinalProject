@@ -18,3 +18,5 @@ C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\F
 C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\pc854032\source\repos\CSCI1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.FormUpdateMovie.resources
+C:\Users\pc854032\source\repos\CSCI1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.FormDeleteMovies.resources
