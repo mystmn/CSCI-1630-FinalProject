@@ -1,7 +1,7 @@
 ﻿
 namespace FinalProject
 {
-    partial class FormUpdateMovies
+    partial class FormUpdateMovie
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,17 @@ namespace FinalProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FormUpdateMovie
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Name = "FormUpdateMovie";
+            this.Text = "Update Movies";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

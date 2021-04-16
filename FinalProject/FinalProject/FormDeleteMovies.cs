@@ -12,6 +12,9 @@ namespace FinalProject
 {
     public partial class FormDeleteMovies : Form
     {
-        public FormDeleteMovies() => InitializeComponent();
+        public FormDeleteMovies()
+        {
+            InitializeComponent();
+        }
     }
 }

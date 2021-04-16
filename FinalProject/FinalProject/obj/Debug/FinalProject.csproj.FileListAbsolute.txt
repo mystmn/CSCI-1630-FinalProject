@@ -18,6 +18,7 @@ C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\F
 C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+<<<<<<< HEAD
 C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
 C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.exe
 C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
@@ -28,3 +29,7 @@ C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj
 C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+=======
+C:\Users\pc854032\source\repos\CSCI1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.FormUpdateMovie.resources
+C:\Users\pc854032\source\repos\CSCI1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.FormDeleteMovies.resources
+>>>>>>> 9156b58a8b9d058858c325964d1834448dc5fa70

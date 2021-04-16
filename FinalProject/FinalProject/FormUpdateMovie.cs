@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FinalProject
 {
-    public partial class FormUpdateMovies : Form
+    public partial class FormUpdateMovie : Form
     {
-        public FormUpdateMovies()
+        public FormUpdateMovie()
         {
             InitializeComponent();
         }

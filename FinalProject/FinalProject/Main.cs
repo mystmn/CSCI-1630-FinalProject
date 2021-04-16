@@ -29,14 +29,14 @@ namespace FinalProject
         {
             // Update Movies EventHandler
 
-            //FormUpdateMovies formUpdateMovies = new FormUpdateMovies();
-            //formUpdateMovies.Show();
+            FormUpdateMovie formUpdateMovies = new FormUpdateMovie();
+            formUpdateMovies.Show();
         }
 
         private void deleteMovieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FormDeleteMovies formDeleteMovies = new FormDeleteMovies();
-           // formDeleteMovies.Show();
+           FormDeleteMovies formDeleteMovies = new FormDeleteMovies();
+           formDeleteMovies.Show();
         }
 
         private void Main_Load(object sender, EventArgs e)
