@@ -40,15 +40,40 @@ namespace FinalProject
         }
 
         private void Main_Load(object sender, EventArgs e)
-        {
+        { //set up connection string
             string connectionString = GetConnectionString1();
+            //get a list of movies set up from the Movie Class
+            List<Movie> movies = new List<Movie>();
+            //SQL statement and Genre ID array
+            string sqlCommand = "SELECT Id, Title, Year, Director, Genre, RottenTomatoesScore, TotalEarned FROM Movies ORDER BY Title";
+            string[] genres = {"Animation", "Action", "Comedy", "Drama", "Horror","Mystery","Romance","Science Fiction","Western"};
+
+
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    connection.Open();
-                    MessageBox.Show("Connected To Database");
-                    connection.Close();
+                    using (SqlCommand command = new SqlCommand(sqlCommand, connection)){   
+                        
+                        connection.Open();
+                        using(SqlDataReader reader = command.ExecuteReader()){
+
+                            while(reader.read()){
+                                var movie = new Movie();
+                                movie.Title = reader.GetString(0);
+                                movie.Year = reader.GetString(1);
+                                movie.Director = reader.GetString(2);
+                                movie.RottenTomatoesScore = reader.GetString(4);
+                                movie.TotalEarned = reader.GetString(5);
+
+                                int genreNumber = reader.GetInt32(3);
+                                movie.Genre = genres[genreNumber];
+                                
+                                movies.Add(movie);
+                            }
+                        }
+                        connection.Close();
+                    }
                 }
             }catch (Exception ex)
             {

@@ -1,0 +1,12 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "project": "FinalProject\\Main.cs",
+      "projectTarget": "",
+      "name": "Main.cs"
+    }
+  ]
+}
