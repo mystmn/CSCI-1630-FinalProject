@@ -13,6 +13,9 @@ namespace FinalProject
 {
     public partial class Main : Form
     {
+        // Pull the default error messages
+        Messages errors = new Messages();
+
         public Main()
         {
             InitializeComponent();
@@ -35,36 +38,10 @@ namespace FinalProject
 
         private void deleteMovieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           FormDeleteMovies formDeleteMovies = new FormDeleteMovies();
+            // Delete Movies EventHandler
+
+            FormDeleteMovies formDeleteMovies = new FormDeleteMovies();
            formDeleteMovies.Show();
-        }
-
-        private void Main_Load(object sender, EventArgs e)
-        {
-            string connectionString = GetConnectionString1();
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    MessageBox.Show("Connected To Database");
-                    connection.Close();
-                }
-            }catch (Exception ex)
-            {
-                MessageBox.Show($"Database connection failed. Error {ex.Message}");
-            }
-        }
-
-        private static string GetConnectionString1()
-        {
-            string server = "Data Source=coursemaster1.csbchotp6tva.us-east-2.rds.amazonaws.com";
-            string database = "CSCI1630";
-            string username = "rw1630";
-            string password = "Project!";
-            string port = "1433";
-
-            return $"Data Source ={server},{port};Initial Catalog:{database};User ID={username};Password={password};";
         }
     }
 }
