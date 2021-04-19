@@ -73,14 +73,6 @@ namespace FinalProject
             return $"Data Source ={server},{port};Initial Catalog:{database};User ID={username};Password={password};";
         }
 
-        public bool insert(List<Movie> item)
-        { 
-
-            string conn = MakeDBConnection();
-
-            // was the data successful?
-            return true;
-        }
         public bool insertData(List<Movie> item)
         { 
 
@@ -90,6 +82,14 @@ namespace FinalProject
             return true;
         }
         public bool updateData(List<Movie> item)
+        { 
+
+            string conn = MakeDBConnection();
+
+            // was the data successful?
+            return true;
+        }
+        public bool deleteData(List<Movie> item)
         { 
 
             string conn = MakeDBConnection();
