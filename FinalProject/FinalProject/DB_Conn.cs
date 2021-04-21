@@ -20,11 +20,12 @@ namespace FinalProject
             
             //get a list of movies set up from the Movie Class
             List<Movie> movies = new List<Movie>();
-
+            
             /*
             //SQL statement and Genre ID array
             string sqlCommand = "SELECT Id, Title, Year, Director, Genre, RottenTomatoesScore, TotalEarned FROM Movies ORDER BY Title";
             string[] genres = { "Animation", "Action", "Comedy", "Drama", "Horror", "Mystery", "Romance", "Science Fiction", "Western" };
+
 
             try
             {
@@ -45,7 +46,7 @@ namespace FinalProject
                                 movie.Year = reader.GetInt32(1);
                                 movie.Director = reader.GetString(2);
                                 movie.RottenTomatoesScore = reader.GetInt32(4);
-                                movie.BoxOffice = reader.GetInt32(5);
+                                movie.TotalEarned = reader.GetDecimal(5);
 
                                 int genreNumber = reader.GetInt32(3);
                                 movie.Genre = genres[genreNumber];
@@ -61,8 +62,7 @@ namespace FinalProject
             {
                 Console.WriteLine($"Database connection failed. Error {ex.Message}");
             }
-                        */
-
+            */
         }
         private static string MakeDBConnection()
         {
@@ -90,31 +90,35 @@ namespace FinalProject
 
             using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
             {
-                SqlCommand command = new SqlCommand(sqlCommand, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                try
+                using (SqlCommand command = new SqlCommand(sqlCommand, connection))
                 {
-                    while (reader.Read())
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    try
                     {
-                        movie.Title = reader.GetFieldValue<string>(0);
-                        movie.Year = reader.GetFieldValue<int>(1);
-                        movie.Director = reader.GetFieldValue<string>(2);
-                        movie.RottenTomatoesScore = reader.GetFieldValue<int>(4);
-                        movie.BoxOffice = reader.GetFieldValue<int>(5);
+                        while (reader.Read())
+                        {
+                            movie.ID = reader.GetFieldValue<int>(0);
+                            movie.Title = reader.GetFieldValue<string>(1);
+                            movie.Year = reader.GetFieldValue<int>(2);
+                            movie.Director = reader.GetFieldValue<string>(3);
 
-                        int genreNumber = reader.GetFieldValue<int>(3);
-                        movie.Genre = genres[genreNumber];
+                            int genreNumber = reader.GetFieldValue<int>(4);
+                            movie.Genre = genres[genreNumber];
 
-                        movies.Add(movie);
+                            movie.RottenTomatoesScore = reader.IsDBNull(5) ? -1 : reader.GetFieldValue<int>(5);
+                            movie.BoxOffice = reader.IsDBNull(6) ? -1 :  reader.GetFieldValue<decimal>(6);
 
-                        this.pacman = movies;
+                            movies.Add(movie);
+
+                            this.pacman = movies;
+                        }
+
                     }
-
-                }
-                finally
-                {
-                    connection.Close();
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
             } 
         }

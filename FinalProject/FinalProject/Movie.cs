@@ -8,7 +8,7 @@ namespace FinalProject
 {
     class Movie
     {
-		//public string ID { get; set; }
+		public int ID { get; set; }
 
 		public string Title { get; set; }
 
@@ -20,6 +20,6 @@ namespace FinalProject
 
 		public int RottenTomatoesScore { get; set; }
 
-		public int BoxOffice { get; set; }
+		public decimal BoxOffice { get; set; }
 	}
 }
