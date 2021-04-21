@@ -13,8 +13,11 @@ namespace FinalProject
 {
     class DB_Conn
     {
-        /*
-        private void Main_Load(object sender, EventArgs e)
+        public DB_Conn()
+        {
+            Main_Load();
+        }
+        private void Main_Load()
         { 
             //set up connection string
             string connectionString = MakeDBConnection();
@@ -33,19 +36,20 @@ namespace FinalProject
                 {
                     using (SqlCommand command = new SqlCommand(sqlCommand, connection))
                     {
+                        Console.WriteLine("Database is a go!");
 
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
 
-                            while (reader.read())
+                            while (reader.Read())
                             {
                                 var movie = new Movie();
                                 movie.Title = reader.GetString(0);
-                                movie.Year = reader.GetString(1);
+                                movie.Year = reader.GetInt32(1);
                                 movie.Director = reader.GetString(2);
-                                movie.RottenTomatoesScore = reader.GetString(4);
-                                movie.TotalEarned = reader.GetString(5);
+                                movie.RottenTomatoesScore = reader.GetInt32(4);
+                                movie.BoxOffice = reader.GetInt32(5);
 
                                 int genreNumber = reader.GetInt32(3);
                                 movie.Genre = genres[genreNumber];
@@ -59,12 +63,12 @@ namespace FinalProject
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Database connection failed. Error {ex.Message}");
+                Console.WriteLine($"Database connection failed. Error {ex.Message}");
             }
-        }*/
+        }
         private static string MakeDBConnection()
         {
-            string server = "Data Source=coursemaster1.csbchotp6tva.us-east-2.rds.amazonaws.com";
+            string server = "coursemaster1.csbchotp6tva.us-east-2.rds.amazonaws.com";
             string database = "CSCI1630";
             string username = "rw1630";
             string password = "Project!";
@@ -73,13 +77,13 @@ namespace FinalProject
             return $"Data Source ={server},{port};Initial Catalog:{database};User ID={username};Password={password};";
         }
 
-        public bool insertData(List<Movie> item)
-        { 
+        public void insertData()
+        {
+            Main_Load();
 
             string conn = MakeDBConnection();
 
             // was the data successful?
-            return true;
         }
         public bool updateData(List<Movie> item)
         { 

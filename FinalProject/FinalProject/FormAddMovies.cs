@@ -16,9 +16,12 @@ namespace FinalProject
         // Pull the default error messages
         Messages errors = new Messages();
 
+        DB_Conn db_conn = new DB_Conn();
+
         public FormAddMovies()
         {
-            
+            db_conn.insertData;
+
             InitializeComponent();
         }
 
