@@ -20,11 +20,11 @@ namespace FinalProject
             
             //get a list of movies set up from the Movie Class
             List<Movie> movies = new List<Movie>();
-            
+
+            /*
             //SQL statement and Genre ID array
             string sqlCommand = "SELECT Id, Title, Year, Director, Genre, RottenTomatoesScore, TotalEarned FROM Movies ORDER BY Title";
             string[] genres = { "Animation", "Action", "Comedy", "Drama", "Horror", "Mystery", "Romance", "Science Fiction", "Western" };
-
 
             try
             {
@@ -61,6 +61,8 @@ namespace FinalProject
             {
                 Console.WriteLine($"Database connection failed. Error {ex.Message}");
             }
+                        */
+
         }
         private static string MakeDBConnection()
         {
@@ -70,7 +72,7 @@ namespace FinalProject
             string password = "Project!";
             string port = "1433";
 
-            return $"Data Source ={server},{port};Initial Catalog:{database};User ID={username};Password={password};";
+            return $"Data Source ={server},{port};Initial Catalog={database};User ID={username};Password={password};";
         }
 
         public List<Movie> pacman;
