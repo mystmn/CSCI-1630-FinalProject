@@ -20,7 +20,12 @@ namespace FinalProject
 
         public FormAddMovies()
         {
-            db_conn.insertData;
+            db_conn.selectData();
+
+            foreach (var x in db_conn.Setname)
+            {
+                MessageBox.Show($"{x}");
+            }
 
             InitializeComponent();
         }
@@ -103,8 +108,8 @@ namespace FinalProject
                 DB_Conn db_Conn = new DB_Conn(); // making connection to database
 
                 //Did the database successfully INSERT the data; return a bool
-                string status = db_Conn.insertData(movie) ? errors.db_conn_status(Messages.dbVal.DB_Conn_succ) : errors.db_conn_status(Messages.dbVal.DB_Conn_fail);
-                
+                //string status = db_Conn.insertData() ? errors.db_conn_status(Messages.dbVal.DB_Conn_succ) : errors.db_conn_status(Messages.dbVal.DB_Conn_fail);
+                string status = "";
                 // update the user
                 MessageBox.Show(status);
                 Close();

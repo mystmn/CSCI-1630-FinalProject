@@ -13,10 +13,6 @@ namespace FinalProject
 {
     class DB_Conn
     {
-        public DB_Conn()
-        {
-            Main_Load();
-        }
         private void Main_Load()
         { 
             //set up connection string
@@ -77,10 +73,52 @@ namespace FinalProject
             return $"Data Source ={server},{port};Initial Catalog:{database};User ID={username};Password={password};";
         }
 
+        public List<Movie> pacman;
+        private List<Movie> GetName; //field
+        public List<Movie> Setname { get { return GetName; } set{ GetName = this.pacman; } } //property
+
+        public void selectData()
+        {
+            string sqlCommand = "SELECT * FROM Movies";
+            string[] genres = { "Animation", "Action", "Comedy", "Drama", "Horror", "Mystery", "Romance", "Science Fiction", "Western" };
+
+            //get a list of movies set up from the Movie Class
+            List<Movie> movies = new List<Movie>();
+            var movie = new Movie();
+
+            using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
+            {
+                SqlCommand command = new SqlCommand(sqlCommand, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                try
+                {
+                    while (reader.Read())
+                    {
+                        movie.Title = reader.GetFieldValue<string>(0);
+                        movie.Year = reader.GetFieldValue<int>(1);
+                        movie.Director = reader.GetFieldValue<string>(2);
+                        movie.RottenTomatoesScore = reader.GetFieldValue<int>(4);
+                        movie.BoxOffice = reader.GetFieldValue<int>(5);
+
+                        int genreNumber = reader.GetFieldValue<int>(3);
+                        movie.Genre = genres[genreNumber];
+
+                        movies.Add(movie);
+
+                        this.pacman = movies;
+                    }
+
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            } 
+        }
+
         public void insertData()
         {
-            Main_Load();
-
             string conn = MakeDBConnection();
 
             // was the data successful?
