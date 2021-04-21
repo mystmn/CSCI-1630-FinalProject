@@ -152,6 +152,7 @@ namespace FinalProject
             this.buttonAdd.TabIndex = 12;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonClear
             // 
@@ -161,6 +162,7 @@ namespace FinalProject
             this.buttonClear.TabIndex = 13;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonClose
             // 
@@ -170,6 +172,7 @@ namespace FinalProject
             this.buttonClose.TabIndex = 14;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // pictureBox1
             // 
