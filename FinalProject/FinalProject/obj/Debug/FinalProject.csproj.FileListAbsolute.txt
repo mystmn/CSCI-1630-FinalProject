@@ -21,16 +21,13 @@ C:\Users\xxDIERxx\Desktop\C# Final Project\FinalProject\FinalProject\obj\Debug\F
 C:\Users\pc854032\source\repos\CSCI1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.FormUpdateMovie.resources
 C:\Users\pc854032\source\repos\CSCI1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.FormDeleteMovies.resources
 C:\Users\pc854032\source\repos\CSCI1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.FormAddMovies.resources
-C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
-C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.exe
-C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
-C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.csprojAssemblyReference.cache
-C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.FormAddMovies.resources
-C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.FormUpdateMovie.resources
-C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.FormDeleteMovies.resources
-C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.Main.resources
-C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.Properties.Resources.resources
-C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.GenerateResource.cache
-C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
-C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.exe
-C:\Users\pcame\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\xxDIERxx\Desktop\C# FINAL PROGRAM\FinalProject\FinalProject\obj\Debug\FinalProject.csprojAssemblyReference.cache
+C:\Users\xxDIERxx\Desktop\C# FINAL PROGRAM\FinalProject\FinalProject\obj\Debug\FinalProject.FormAddMovies.resources
+C:\Users\xxDIERxx\Desktop\C# FINAL PROGRAM\FinalProject\FinalProject\obj\Debug\FinalProject.FormUpdateMovie.resources
+C:\Users\xxDIERxx\Desktop\C# FINAL PROGRAM\FinalProject\FinalProject\obj\Debug\FinalProject.FormDeleteMovies.resources
+C:\Users\xxDIERxx\Desktop\C# FINAL PROGRAM\FinalProject\FinalProject\obj\Debug\FinalProject.Main.resources
+C:\Users\xxDIERxx\Desktop\C# FINAL PROGRAM\FinalProject\FinalProject\obj\Debug\FinalProject.Properties.Resources.resources
+C:\Users\xxDIERxx\Desktop\C# FINAL PROGRAM\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.GenerateResource.cache
+C:\Users\xxDIERxx\Desktop\C# FINAL PROGRAM\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
+C:\Users\xxDIERxx\Desktop\C# FINAL PROGRAM\FinalProject\FinalProject\obj\Debug\FinalProject.exe
+C:\Users\xxDIERxx\Desktop\C# FINAL PROGRAM\FinalProject\FinalProject\obj\Debug\FinalProject.pdb

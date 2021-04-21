@@ -13,14 +13,14 @@ namespace FinalProject
 {
     class DB_Conn
     {
-        /*
+        
         private void Main_Load(object sender, EventArgs e)
         { 
             //set up connection string
             string connectionString = MakeDBConnection();
             
             //get a list of movies set up from the Movie Class
-            List<Movie> movies = new List<Movie>();
+            //List<Movie> movies = new List<Movie>();
             
             //SQL statement and Genre ID array
             string sqlCommand = "SELECT Id, Title, Year, Director, Genre, RottenTomatoesScore, TotalEarned FROM Movies ORDER BY Title";
@@ -35,6 +35,7 @@ namespace FinalProject
                     {
 
                         connection.Open();
+                        MessageBox.Show("Connected to DB");
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
 
@@ -61,7 +62,7 @@ namespace FinalProject
             {
                 MessageBox.Show($"Database connection failed. Error {ex.Message}");
             }
-        }*/
+        }
         private static string MakeDBConnection()
         {
             string server = "Data Source=coursemaster1.csbchotp6tva.us-east-2.rds.amazonaws.com";
