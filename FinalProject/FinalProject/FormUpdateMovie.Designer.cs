@@ -31,7 +31,7 @@ namespace FinalProject
         {
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
-            this.comboBoxGenre = new System.Windows.Forms.ComboBox();
+            this.textBoxGenre = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.buttonFindMovie = new System.Windows.Forms.Button();
             this.textBoxBoxOffice = new System.Windows.Forms.TextBox();
@@ -57,6 +57,7 @@ namespace FinalProject
             this.buttonClose.TabIndex = 31;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // buttonClear
             // 
@@ -66,11 +67,12 @@ namespace FinalProject
             this.buttonClear.TabIndex = 30;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // comboBoxGenre
+            // textBoxGenre
             // 
-            this.comboBoxGenre.FormattingEnabled = true;
-            this.comboBoxGenre.Items.AddRange(new object[] {
+            this.textBoxGenre.FormattingEnabled = true;
+            this.textBoxGenre.Items.AddRange(new object[] {
             "example 1",
             "example 2",
             "example 3",
@@ -80,10 +82,10 @@ namespace FinalProject
             "example 7",
             "example 8",
             "example 9"});
-            this.comboBoxGenre.Location = new System.Drawing.Point(152, 228);
-            this.comboBoxGenre.Name = "comboBoxGenre";
-            this.comboBoxGenre.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxGenre.TabIndex = 29;
+            this.textBoxGenre.Location = new System.Drawing.Point(152, 228);
+            this.textBoxGenre.Name = "textBoxGenre";
+            this.textBoxGenre.Size = new System.Drawing.Size(121, 21);
+            this.textBoxGenre.TabIndex = 29;
             // 
             // label6
             // 
@@ -175,6 +177,7 @@ namespace FinalProject
             this.buttonUpdate.TabIndex = 18;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // textBoxMovieTitle
             // 
@@ -209,7 +212,7 @@ namespace FinalProject
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonClear);
-            this.Controls.Add(this.comboBoxGenre);
+            this.Controls.Add(this.textBoxGenre);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonFindMovie);
             this.Controls.Add(this.textBoxBoxOffice);
@@ -236,7 +239,7 @@ namespace FinalProject
 
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonClear;
-        private System.Windows.Forms.ComboBox comboBoxGenre;
+        private System.Windows.Forms.ComboBox textBoxGenre;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonFindMovie;
         private System.Windows.Forms.TextBox textBoxBoxOffice;
