@@ -16,30 +16,37 @@ namespace FinalProject
         // Pull the default error messages
         Messages errors = new Messages();
 
-        DB_Conn db_conn = new DB_Conn();
-
         public Main()
         {
             InitializeComponent();
-            showResults();
-        }
+            DB_Conn db_conn = new DB_Conn();
 
-        public void showResults()
-        {
 
-            db_conn.selectData();
-            List<string> passing = new List<string>();
+            //Test connect = new Test();
+            //connect.test_db();
+            //MessageBox.Show("testing...{0}", string.Join(" ", connect.Pacman));
 
-            foreach(var x in db_conn.Setname)
-            {
-                passing.Add(x.Title);
+            //db_conn.selectData();
+            //MessageBox.Show("vars - {0}", string.Join(" ", db_conn.Setname));
 
+            List<string> eachMovie = new List<string>();
+
+            // Testing the Main.CS grid
+            DataTable table = new DataTable();
+
+
+            /*
+            foreach (DataRow row in dataGridViewMaster.Rows;
+            {*/
+                foreach(var x in db_conn.Setname)
+                {
+                    dataGridViewMaster.Rows.Add(x);
+                }
+            //eachMovie.Add(Convert.ToString(x));
+            /*
             }
-            MessageBox.Show($"secret message = {String.Join(" ", passing)}");
-
-
-            //string p = String.Join(",", db_conn.Pacman);
-            //MessageBox.Show($"secret message = {p}");
+            MessageBox.Show("vars - {0}", string.Join(" ", eachMovie));
+            */
 
         }
 

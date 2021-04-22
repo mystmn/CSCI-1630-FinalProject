@@ -16,11 +16,14 @@ namespace FinalProject
         // Pull the default error messages
         Messages errors = new Messages();
 
-        DB_Conn db_conn = new DB_Conn();
-
         public FormAddMovies()
         {
             InitializeComponent();
+        }
+        // Test Button that will need to be removed later
+        private void buttonTest_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void buttonClear_Click(object sender, EventArgs e)

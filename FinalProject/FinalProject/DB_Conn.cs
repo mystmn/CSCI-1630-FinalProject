@@ -74,7 +74,9 @@ namespace FinalProject
 
             return $"Data Source ={server},{port};Initial Catalog={database};User ID={username};Password={password};";
         }
-
+  
+        private List<object> _getName; //field
+        public List<object> Setname { get { return this._getName; } set{ this._getName = value; } } //property
 
         /*
          * Testing passing a list to Main and displaying the strings
@@ -88,13 +90,13 @@ namespace FinalProject
 
         public void selectData()
         {
-            string sqlCommand = "SELECT * FROM Movies";
+            string sqlCommand = "SELECT ID FROM Movies";
             string[] genres = { "Animation", "Action", "Comedy", "Drama", "Horror", "Mystery", "Romance", "Science Fiction", "Western" };
 
             //get a list of movies set up from the Movie Class
-            List<Movie> movies = new List<Movie>();
-            List<string> examples = new List<string>();
-            var movie = new Movie();
+            //List<Movie> movies = new List<Movie>();
+            Movie movie = new Movie();
+            List<object> eachMovie = new List<object>();
 
             examples.Add("bobby world");
             examples.Add(" here we come!");
@@ -110,22 +112,20 @@ namespace FinalProject
                     {
                         while (reader.Read())
                         {
- 
-  
-                            movie.ID = reader.GetFieldValue<int>(0);
-                            movie.Title = "Title is here";
-                            //movie.Title = reader.GetFieldValue<string>(1);
-                            movie.Year = reader.GetFieldValue<int>(2);
-                            movie.Director = reader.GetFieldValue<string>(3);
+                            eachMovie.Add(movie.ID = reader.GetFieldValue<int>(0));
+                            /*
+                            eachMovie.Add(movie.Title = reader.GetFieldValue<string>(1));
+                            eachMovie.Add(movie.Year = reader.GetFieldValue<int>(2));
+                            eachMovie.Add(movie.Director = reader.GetFieldValue<string>(3));
 
                             int genreNumber = reader.GetFieldValue<int>(4);
-                            movie.Genre = genres[genreNumber];
+                            eachMovie.Add(movie.Genre = genres[genreNumber]);
 
-                            movie.RottenTomatoesScore = reader.IsDBNull(5) ? -1 : reader.GetFieldValue<int>(5);
-                            movie.BoxOffice = reader.IsDBNull(6) ? -1 :  reader.GetFieldValue<decimal>(6);
-
-                                                        
-                            this._getName = movies;
+                            eachMovie.Add(movie.RottenTomatoesScore = reader.IsDBNull(5) ? -1 : reader.GetFieldValue<int>(5));
+                            eachMovie.Add(movie.BoxOffice = reader.IsDBNull(6) ? -1 :  reader.GetFieldValue<decimal>(6));
+                            */
+                            this._getName = eachMovie;
+                            
                         }
 
                     }
