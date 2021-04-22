@@ -22,4 +22,16 @@ namespace FinalProject
 
 		public decimal BoxOffice { get; set; }
 	}
+
+	public class Emp
+    {
+		public int ID { get; set; }
+		public string Title { get; set; }
+
+		public Emp(int id, string title)
+        {
+			this.ID = id;
+			this.Title = title;
+        }
+	}
 }

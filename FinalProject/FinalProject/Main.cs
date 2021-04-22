@@ -19,6 +19,35 @@ namespace FinalProject
         public Main()
         {
             InitializeComponent();
+            DB_Conn db_conn = new DB_Conn();
+
+
+            //Test connect = new Test();
+            //connect.test_db();
+            //MessageBox.Show("testing...{0}", string.Join(" ", connect.Pacman));
+
+            //db_conn.selectData();
+            //MessageBox.Show("vars - {0}", string.Join(" ", db_conn.Setname));
+
+            List<string> eachMovie = new List<string>();
+
+            // Testing the Main.CS grid
+            DataTable table = new DataTable();
+
+
+            /*
+            foreach (DataRow row in dataGridViewMaster.Rows;
+            {*/
+                foreach(var x in db_conn.Setname)
+                {
+                    dataGridViewMaster.Rows.Add(x);
+                }
+            //eachMovie.Add(Convert.ToString(x));
+            /*
+            }
+            MessageBox.Show("vars - {0}", string.Join(" ", eachMovie));
+            */
+
         }
 
         private void addMovieToolStripMenuItem_Click(object sender, EventArgs e)

@@ -36,7 +36,7 @@ namespace FinalProject
             this.updateMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewMaster = new System.Windows.Forms.DataGridView();
             this.colMovieTitles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMovieYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMovieGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,7 +44,7 @@ namespace FinalProject
             this.colMovieBoxOffice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelMasterList = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaster)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -78,21 +78,21 @@ namespace FinalProject
             // addMovieToolStripMenuItem
             // 
             this.addMovieToolStripMenuItem.Name = "addMovieToolStripMenuItem";
-            this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.addMovieToolStripMenuItem.Text = "Add Movie";
             this.addMovieToolStripMenuItem.Click += new System.EventHandler(this.addMovieToolStripMenuItem_Click);
             // 
             // updateMovieToolStripMenuItem
             // 
             this.updateMovieToolStripMenuItem.Name = "updateMovieToolStripMenuItem";
-            this.updateMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateMovieToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.updateMovieToolStripMenuItem.Text = "Update Movie";
             this.updateMovieToolStripMenuItem.Click += new System.EventHandler(this.updateMovieToolStripMenuItem_Click);
             // 
             // deleteMovieToolStripMenuItem
             // 
             this.deleteMovieToolStripMenuItem.Name = "deleteMovieToolStripMenuItem";
-            this.deleteMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteMovieToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.deleteMovieToolStripMenuItem.Text = "Delete Movie";
             this.deleteMovieToolStripMenuItem.Click += new System.EventHandler(this.deleteMovieToolStripMenuItem_Click);
             // 
@@ -102,21 +102,21 @@ namespace FinalProject
             this.toolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
             this.toolStripMenuItem1.Text = "About";
             // 
-            // dataGridView1
+            // dataGridViewMaster
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewMaster.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMaster.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMovieTitles,
             this.colMovieYear,
             this.colMovieGenre,
             this.colMovieRotten,
             this.colMovieBoxOffice});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 64);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(845, 297);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridViewMaster.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewMaster.Location = new System.Drawing.Point(0, 64);
+            this.dataGridViewMaster.Name = "dataGridViewMaster";
+            this.dataGridViewMaster.Size = new System.Drawing.Size(845, 297);
+            this.dataGridViewMaster.TabIndex = 1;
             // 
             // colMovieTitles
             // 
@@ -167,14 +167,14 @@ namespace FinalProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 450);
             this.Controls.Add(this.labelMasterList);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewMaster);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "MovieManager";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaster)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,7 +189,7 @@ namespace FinalProject
         private System.Windows.Forms.ToolStripMenuItem addMovieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateMovieToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteMovieToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewMaster;
         private System.Windows.Forms.Label labelMasterList;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMovieTitles;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMovieYear;
