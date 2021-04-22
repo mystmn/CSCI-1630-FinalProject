@@ -19,35 +19,26 @@ namespace FinalProject
         public Main()
         {
             InitializeComponent();
+
+            showMainGrid();
+        }
+
+        private void showMainGrid()
+        {
+            // Pull Objects
             DB_Conn db_conn = new DB_Conn();
+            db_conn.selectData();
 
+            // Grab the Grid from DB_conn.cs
+            dataGridViewMaster.DataSource = db_conn.Setname;
 
-            //Test connect = new Test();
-            //connect.test_db();
-            //MessageBox.Show("testing...{0}", string.Join(" ", connect.Pacman));
+            // Resize the master DataGridView columns to fit the newly loaded data.
+            dataGridViewMaster.AutoResizeColumns();
 
-            //db_conn.selectData();
-            //MessageBox.Show("vars - {0}", string.Join(" ", db_conn.Setname));
-
-            List<string> eachMovie = new List<string>();
-
-            // Testing the Main.CS grid
-            DataTable table = new DataTable();
-
-
-            /*
-            foreach (DataRow row in dataGridViewMaster.Rows;
-            {*/
-                foreach(var x in db_conn.Setname)
-                {
-                    dataGridViewMaster.Rows.Add(x);
-                }
-            //eachMovie.Add(Convert.ToString(x));
-            /*
-            }
-            MessageBox.Show("vars - {0}", string.Join(" ", eachMovie));
-            */
-
+            // Configure the details DataGridView so that its columns automatically
+            // adjust their widths when the data changes.
+            dataGridViewMaster.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void addMovieToolStripMenuItem_Click(object sender, EventArgs e)
@@ -71,6 +62,11 @@ namespace FinalProject
 
             FormDeleteMovies formDeleteMovies = new FormDeleteMovies();
            formDeleteMovies.Show();
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+         
         }
     }
 }

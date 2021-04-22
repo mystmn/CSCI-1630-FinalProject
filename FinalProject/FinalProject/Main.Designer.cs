@@ -37,12 +37,8 @@ namespace FinalProject
             this.deleteMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewMaster = new System.Windows.Forms.DataGridView();
-            this.colMovieTitles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMovieYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMovieGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMovieRotten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMovieBoxOffice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelMasterList = new System.Windows.Forms.Label();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaster)).BeginInit();
             this.SuspendLayout();
@@ -104,52 +100,16 @@ namespace FinalProject
             // 
             // dataGridViewMaster
             // 
+            this.dataGridViewMaster.AllowUserToAddRows = false;
+            this.dataGridViewMaster.AllowUserToDeleteRows = false;
             this.dataGridViewMaster.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMaster.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMovieTitles,
-            this.colMovieYear,
-            this.colMovieGenre,
-            this.colMovieRotten,
-            this.colMovieBoxOffice});
             this.dataGridViewMaster.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewMaster.Location = new System.Drawing.Point(0, 64);
             this.dataGridViewMaster.Name = "dataGridViewMaster";
+            this.dataGridViewMaster.ReadOnly = true;
             this.dataGridViewMaster.Size = new System.Drawing.Size(845, 297);
             this.dataGridViewMaster.TabIndex = 1;
-            // 
-            // colMovieTitles
-            // 
-            this.colMovieTitles.HeaderText = "Movie Title";
-            this.colMovieTitles.MinimumWidth = 25;
-            this.colMovieTitles.Name = "colMovieTitles";
-            this.colMovieTitles.ReadOnly = true;
-            this.colMovieTitles.Width = 250;
-            // 
-            // colMovieYear
-            // 
-            this.colMovieYear.HeaderText = "Year";
-            this.colMovieYear.Name = "colMovieYear";
-            this.colMovieYear.ReadOnly = true;
-            // 
-            // colMovieGenre
-            // 
-            this.colMovieGenre.HeaderText = "Genre";
-            this.colMovieGenre.Name = "colMovieGenre";
-            this.colMovieGenre.ReadOnly = true;
-            // 
-            // colMovieRotten
-            // 
-            this.colMovieRotten.HeaderText = "Rotten Tomatoes Score";
-            this.colMovieRotten.Name = "colMovieRotten";
-            this.colMovieRotten.ReadOnly = true;
-            // 
-            // colMovieBoxOffice
-            // 
-            this.colMovieBoxOffice.HeaderText = "Total Box Office";
-            this.colMovieBoxOffice.Name = "colMovieBoxOffice";
-            this.colMovieBoxOffice.ReadOnly = true;
-            this.colMovieBoxOffice.Width = 150;
             // 
             // labelMasterList
             // 
@@ -161,11 +121,22 @@ namespace FinalProject
             this.labelMasterList.TabIndex = 2;
             this.labelMasterList.Text = "Movies Master List";
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Location = new System.Drawing.Point(354, 367);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
+            this.buttonRefresh.TabIndex = 3;
+            this.buttonRefresh.Text = "Refresh";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 450);
+            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.labelMasterList);
             this.Controls.Add(this.dataGridViewMaster);
             this.Controls.Add(this.menuStrip1);
@@ -191,11 +162,7 @@ namespace FinalProject
         private System.Windows.Forms.ToolStripMenuItem deleteMovieToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridViewMaster;
         private System.Windows.Forms.Label labelMasterList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMovieTitles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMovieYear;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMovieGenre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMovieRotten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMovieBoxOffice;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }
 
