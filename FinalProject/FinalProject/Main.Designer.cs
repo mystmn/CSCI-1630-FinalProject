@@ -38,6 +38,7 @@ namespace FinalProject
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewMaster = new System.Windows.Forms.DataGridView();
             this.labelMasterList = new System.Windows.Forms.Label();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaster)).BeginInit();
             this.SuspendLayout();
@@ -99,11 +100,14 @@ namespace FinalProject
             // 
             // dataGridViewMaster
             // 
+            this.dataGridViewMaster.AllowUserToAddRows = false;
+            this.dataGridViewMaster.AllowUserToDeleteRows = false;
             this.dataGridViewMaster.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMaster.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewMaster.Location = new System.Drawing.Point(0, 64);
             this.dataGridViewMaster.Name = "dataGridViewMaster";
+            this.dataGridViewMaster.ReadOnly = true;
             this.dataGridViewMaster.Size = new System.Drawing.Size(845, 297);
             this.dataGridViewMaster.TabIndex = 1;
             // 
@@ -117,11 +121,22 @@ namespace FinalProject
             this.labelMasterList.TabIndex = 2;
             this.labelMasterList.Text = "Movies Master List";
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Location = new System.Drawing.Point(354, 367);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
+            this.buttonRefresh.TabIndex = 3;
+            this.buttonRefresh.Text = "Refresh";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 450);
+            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.labelMasterList);
             this.Controls.Add(this.dataGridViewMaster);
             this.Controls.Add(this.menuStrip1);
@@ -147,6 +162,7 @@ namespace FinalProject
         private System.Windows.Forms.ToolStripMenuItem deleteMovieToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridViewMaster;
         private System.Windows.Forms.Label labelMasterList;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }
 

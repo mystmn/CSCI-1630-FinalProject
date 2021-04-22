@@ -63,5 +63,10 @@ namespace FinalProject
             FormDeleteMovies formDeleteMovies = new FormDeleteMovies();
            formDeleteMovies.Show();
         }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+         
+        }
     }
 }

@@ -16,8 +16,124 @@ namespace FinalProject
     {
         private void Main_Load()
         {
-            //set up connection string
-            string connectionString = MakeDBConnection();
+
+        }
+
+        private static string MakeDBConnection()
+        {
+            string server = "coursemaster1.csbchotp6tva.us-east-2.rds.amazonaws.com";
+            string database = "CSCI1630";
+            string username = "rw1630";
+            string password = "Project!";
+            string port = "1433";
+
+            return $"Data Source ={server},{port};Initial Catalog={database};User ID={username};Password={password};";
+        }
+
+        private DataTable _getName; //field
+        public DataTable Setname { get { return this._getName; } set { this._getName = value; } } //property
+
+        public void selectData()
+        {
+            string sqlCommand = "SELECT * FROM Movies";
+            string[] genres = { "Animation", "Action", "Comedy", "Drama", "Horror", "Mystery", "Romance", "Science Fiction", "Western" };
+
+            // Make the connection with the Server
+            using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
+            {                                        
+                
+                connection.Open();
+    
+                using (SqlCommand command = new SqlCommand(sqlCommand, connection))
+                {                   
+
+                    // Create a DataSet.
+                    DataTable dt = new DataTable();
+                    dt.Columns.Add(new DataColumn("ID"));
+                    dt.Columns.Add(new DataColumn("Movie Title"));
+                    dt.Columns.Add(new DataColumn("Year"));
+                    dt.Columns.Add(new DataColumn("Director"));
+                    dt.Columns.Add(new DataColumn("Genres"));
+                    dt.Columns.Add(new DataColumn("RottenTomatoesScore"));
+                    dt.Columns.Add(new DataColumn("BoxOffice"));
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    try
+                    {
+
+                        while (reader.Read())
+                        {
+                            dt.Rows.Add(
+                                reader.GetFieldValue<int>(0), 
+                                reader.GetFieldValue<string>(1),
+                                reader.GetFieldValue<int>(2),
+                                reader.GetFieldValue<string>(3),
+                                reader.GetFieldValue<int>(4),
+                                reader.GetFieldValue<int>(5),
+                                reader.GetFieldValue<decimal>(6)
+                            );
+                            this.Setname = dt;
+                        }
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    } 
+                }
+            } 
+        }
+
+        public void insertData(string title, int year, string director, int genre, int scrore, decimal boxOffice)
+        {
+            string conn = MakeDBConnection();
+            string sqlCommand = "INSERT INTO Movies (Title, Year, Director, Genre, RottenTomatoesScore, TotalEarned )" +
+                "VALUES (@param1,@param2,@param3,@param4,@param5,@param6)";
+
+            // Make the connection with the Server
+            using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(sqlCommand, connection))
+                {
+                        command.Parameters.Add("@param1", SqlDbType.VarChar, 50).Value = title;
+                        command.Parameters.Add("@param2", SqlDbType.Int).Value = year;
+                        command.Parameters.Add("@param3", SqlDbType.VarChar, 50).Value = director;
+                        command.Parameters.Add("@param4", SqlDbType.Int).Value = genre;
+                        command.Parameters.Add("@param5", SqlDbType.Int).Value = scrore;
+                        command.Parameters.Add("@param6", SqlDbType.Decimal).Value = boxOffice;
+                        command.CommandType = CommandType.Text;
+                    try
+                    {
+                        command.ExecuteNonQuery();
+
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
+        public bool updateData(List<Movie> item)
+        { 
+
+            string conn = MakeDBConnection();
+
+            // was the data successful?
+            return true;
+        }
+        public bool deleteData(List<Movie> item)
+        { 
+
+            string conn = MakeDBConnection();
+
+            // was the data successful?
+            return true;
+        }
+
+        public void old_code()
+        {
 
             /*
             //get a list of movies set up from the Movie Class
@@ -65,90 +181,6 @@ namespace FinalProject
                 Console.WriteLine($"Database connection failed. Error {ex.Message}");
             }
             */
-        }
-        private static string MakeDBConnection()
-        {
-            string server = "coursemaster1.csbchotp6tva.us-east-2.rds.amazonaws.com";
-            string database = "CSCI1630";
-            string username = "rw1630";
-            string password = "Project!";
-            string port = "1433";
-
-            return $"Data Source ={server},{port};Initial Catalog={database};User ID={username};Password={password};";
-        }
-
-        private DataTable _getName; //field
-        public DataTable Setname { get { return this._getName; } set { this._getName = value; } } //property
-
-        public void selectData()
-        {
-            string sqlCommand = "SELECT * FROM Movies";
-            string[] genres = { "Animation", "Action", "Comedy", "Drama", "Horror", "Mystery", "Romance", "Science Fiction", "Western" };
-
-            //get a list of movies set up from the Movie Class
-            using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
-            {
-                using (SqlCommand command = new SqlCommand(sqlCommand, connection))
-                {                   
-                    connection.Open();
-
-                    // Create a DataSet.
-                    DataTable dt = new DataTable();
-                    dt.Columns.Add(new DataColumn("ID"));
-                    dt.Columns.Add(new DataColumn("Movie Title"));
-                    dt.Columns.Add(new DataColumn("Year"));
-                    dt.Columns.Add(new DataColumn("Director"));
-                    dt.Columns.Add(new DataColumn("Genres"));
-                    dt.Columns.Add(new DataColumn("RottenTomatoesScore"));
-                    dt.Columns.Add(new DataColumn("BoxOffice"));
-
-
-                    SqlDataReader reader = command.ExecuteReader();
-                    try
-                    {
-                        while (reader.Read())
-                        {
-                            dt.Rows.Add(
-                                reader.GetFieldValue<int>(0), 
-                                reader.GetFieldValue<string>(1),
-                                reader.GetFieldValue<int>(2),
-                                reader.GetFieldValue<string>(3),
-                                reader.GetFieldValue<int>(4),
-                                reader.GetFieldValue<int>(5),
-                                reader.GetFieldValue<decimal>(6)
-                            );
-                            this.Setname = dt;
-                        }
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    } 
-                }
-            } 
-        }
-
-        public void insertData()
-        {
-            string conn = MakeDBConnection();
-
-            // was the data successful?
-        }
-        public bool updateData(List<Movie> item)
-        { 
-
-            string conn = MakeDBConnection();
-
-            // was the data successful?
-            return true;
-        }
-        public bool deleteData(List<Movie> item)
-        { 
-
-            string conn = MakeDBConnection();
-
-            // was the data successful?
-            return true;
         }
     }
         
