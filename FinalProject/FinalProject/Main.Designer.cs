@@ -37,11 +37,6 @@ namespace FinalProject
             this.deleteMovieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewMaster = new System.Windows.Forms.DataGridView();
-            this.colMovieTitles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMovieYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMovieGenre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMovieRotten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMovieBoxOffice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelMasterList = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaster)).BeginInit();
@@ -106,50 +101,11 @@ namespace FinalProject
             // 
             this.dataGridViewMaster.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewMaster.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMaster.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMovieTitles,
-            this.colMovieYear,
-            this.colMovieGenre,
-            this.colMovieRotten,
-            this.colMovieBoxOffice});
             this.dataGridViewMaster.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridViewMaster.Location = new System.Drawing.Point(0, 64);
             this.dataGridViewMaster.Name = "dataGridViewMaster";
             this.dataGridViewMaster.Size = new System.Drawing.Size(845, 297);
             this.dataGridViewMaster.TabIndex = 1;
-            // 
-            // colMovieTitles
-            // 
-            this.colMovieTitles.HeaderText = "Movie Title";
-            this.colMovieTitles.MinimumWidth = 25;
-            this.colMovieTitles.Name = "colMovieTitles";
-            this.colMovieTitles.ReadOnly = true;
-            this.colMovieTitles.Width = 250;
-            // 
-            // colMovieYear
-            // 
-            this.colMovieYear.HeaderText = "Year";
-            this.colMovieYear.Name = "colMovieYear";
-            this.colMovieYear.ReadOnly = true;
-            // 
-            // colMovieGenre
-            // 
-            this.colMovieGenre.HeaderText = "Genre";
-            this.colMovieGenre.Name = "colMovieGenre";
-            this.colMovieGenre.ReadOnly = true;
-            // 
-            // colMovieRotten
-            // 
-            this.colMovieRotten.HeaderText = "Rotten Tomatoes Score";
-            this.colMovieRotten.Name = "colMovieRotten";
-            this.colMovieRotten.ReadOnly = true;
-            // 
-            // colMovieBoxOffice
-            // 
-            this.colMovieBoxOffice.HeaderText = "Total Box Office";
-            this.colMovieBoxOffice.Name = "colMovieBoxOffice";
-            this.colMovieBoxOffice.ReadOnly = true;
-            this.colMovieBoxOffice.Width = 150;
             // 
             // labelMasterList
             // 
@@ -191,11 +147,6 @@ namespace FinalProject
         private System.Windows.Forms.ToolStripMenuItem deleteMovieToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridViewMaster;
         private System.Windows.Forms.Label labelMasterList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMovieTitles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMovieYear;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMovieGenre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMovieRotten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMovieBoxOffice;
     }
 }
 
