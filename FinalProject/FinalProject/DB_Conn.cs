@@ -14,13 +14,13 @@ namespace FinalProject
     class DB_Conn
     {
         private void Main_Load()
-        { 
+        {
             //set up connection string
             string connectionString = MakeDBConnection();
-            
+
             //get a list of movies set up from the Movie Class
             List<Movie> movies = new List<Movie>();
-            
+
             /*
             //SQL statement and Genre ID array
             string sqlCommand = "SELECT Id, Title, Year, Director, Genre, RottenTomatoesScore, TotalEarned FROM Movies ORDER BY Title";
@@ -75,9 +75,16 @@ namespace FinalProject
             return $"Data Source ={server},{port};Initial Catalog={database};User ID={username};Password={password};";
         }
 
-        public List<Movie> pacman;
-        private List<Movie> GetName; //field
-        public List<Movie> Setname { get { return GetName; } set{ GetName = this.pacman; } } //property
+
+        /*
+         * Testing passing a list to Main and displaying the strings
+         */
+        private List<string> _pacman;
+        public List<string> Pacman { get => this._pacman; set => this._pacman = value; }
+
+
+        private List<Movie> _getName; //field
+        public List<Movie> Setname { get { return this._getName; } set{this._getName = value; }} //property
 
         public void selectData()
         {
@@ -86,7 +93,12 @@ namespace FinalProject
 
             //get a list of movies set up from the Movie Class
             List<Movie> movies = new List<Movie>();
+            List<string> examples = new List<string>();
             var movie = new Movie();
+
+            examples.Add("bobby world");
+            examples.Add(" here we come!");
+            Pacman = examples;
 
             using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
             {
@@ -98,8 +110,11 @@ namespace FinalProject
                     {
                         while (reader.Read())
                         {
+ 
+  
                             movie.ID = reader.GetFieldValue<int>(0);
-                            movie.Title = reader.GetFieldValue<string>(1);
+                            movie.Title = "Title is here";
+                            //movie.Title = reader.GetFieldValue<string>(1);
                             movie.Year = reader.GetFieldValue<int>(2);
                             movie.Director = reader.GetFieldValue<string>(3);
 
@@ -109,9 +124,8 @@ namespace FinalProject
                             movie.RottenTomatoesScore = reader.IsDBNull(5) ? -1 : reader.GetFieldValue<int>(5);
                             movie.BoxOffice = reader.IsDBNull(6) ? -1 :  reader.GetFieldValue<decimal>(6);
 
-                            movies.Add(movie);
-
-                            this.pacman = movies;
+                                                        
+                            this._getName = movies;
                         }
 
                     }

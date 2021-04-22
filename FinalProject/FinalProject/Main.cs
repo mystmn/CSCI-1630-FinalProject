@@ -16,9 +16,31 @@ namespace FinalProject
         // Pull the default error messages
         Messages errors = new Messages();
 
+        DB_Conn db_conn = new DB_Conn();
+
         public Main()
         {
             InitializeComponent();
+            showResults();
+        }
+
+        public void showResults()
+        {
+
+            db_conn.selectData();
+            List<string> passing = new List<string>();
+
+            foreach(var x in db_conn.Setname)
+            {
+                passing.Add(x.Title);
+
+            }
+            MessageBox.Show($"secret message = {String.Join(" ", passing)}");
+
+
+            //string p = String.Join(",", db_conn.Pacman);
+            //MessageBox.Show($"secret message = {p}");
+
         }
 
         private void addMovieToolStripMenuItem_Click(object sender, EventArgs e)

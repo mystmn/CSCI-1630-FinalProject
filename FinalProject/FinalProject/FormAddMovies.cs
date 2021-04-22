@@ -20,13 +20,6 @@ namespace FinalProject
 
         public FormAddMovies()
         {
-            db_conn.selectData();
-
-            foreach (var x in db_conn.Setname)
-            {
-                MessageBox.Show($"{x}");
-            }
-
             InitializeComponent();
         }
 
@@ -43,7 +36,6 @@ namespace FinalProject
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            // Close button
             Close();
         }
 
