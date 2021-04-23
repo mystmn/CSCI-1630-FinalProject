@@ -132,6 +132,53 @@ namespace FinalProject
             return true;
         }
 
+        private List<Movie> _FoundTitle;
+        public List<Movie> FoundTitle { get => this._FoundTitle; set { this._FoundTitle = value; } }
+        
+        public void findingTitle(string searchTitle)
+        {
+            string sqlCommand = $"SELECT * FROM Movies WHERE Title LIKE '%{searchTitle}%'";
+            string[] genres = { "Animation", "Action", "Comedy", "Drama", "Horror", "Mystery", "Romance", "Science Fiction", "Western" };
+
+            // Make the connection with the Server
+            using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(sqlCommand, connection))
+                {
+                    // Create a DataSet.
+                    List<Movie> dt = new List<Movie>();
+
+                    SqlDataReader reader = command.ExecuteReader();
+                    try
+                    {
+                        while (reader.Read())
+                        {
+                            var movie = new Movie();
+                            movie.ID = reader.GetInt32(0);
+                            movie.Title = reader.GetString(1);
+                            movie.Year = reader.GetInt32(2);
+                            movie.Director = reader.GetString(3);
+                            int genreNumber = reader.GetInt32(4);
+                            movie.Genre = genres[genreNumber];
+
+                            movie.RottenTomatoesScore = reader.GetInt32(5);
+                            movie.BoxOffice = reader.GetDecimal(6);
+
+                            dt.Add(movie);
+                            
+                            this.FoundTitle = dt;
+                        }
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
+
         public void old_code()
         {
 

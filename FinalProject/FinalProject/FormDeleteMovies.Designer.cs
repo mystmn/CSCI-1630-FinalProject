@@ -146,6 +146,7 @@ namespace FinalProject
             this.buttonFindMovie.TabIndex = 11;
             this.buttonFindMovie.Text = "Find";
             this.buttonFindMovie.UseVisualStyleBackColor = true;
+            this.buttonFindMovie.Click += new System.EventHandler(this.buttonFindMovie_Click);
             // 
             // label6
             // 
