@@ -106,7 +106,6 @@ namespace FinalProject
             }
             
         }
-
         private void clearFields()
         {
             //Clear the textboxes
@@ -117,6 +116,5 @@ namespace FinalProject
             textBoxRotten.Text = "";
             textBoxBoxOffice.Text = "";
         }
-
     }
 }
