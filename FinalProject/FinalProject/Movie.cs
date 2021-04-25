@@ -23,6 +23,9 @@ namespace FinalProject
 		public decimal BoxOffice { get; set; }
 	}
 
+	/*
+	 *  Used this function for testing
+	 */
 	public class Emp
     {
 		private int _ID;

@@ -14,11 +14,10 @@ namespace FinalProject
 {
     class DB_Conn
     {
-        private void Main_Load()
-        {
-
-        }
-
+ 
+        /*
+         * Make a connection to DB
+         */ 
         private static string MakeDBConnection()
         {
             string server = "coursemaster1.csbchotp6tva.us-east-2.rds.amazonaws.com";
@@ -30,6 +29,10 @@ namespace FinalProject
             return $"Data Source ={server},{port};Initial Catalog={database};User ID={username};Password={password};";
         }
 
+
+        /*
+         * Select ALL from Movies for the Main.cs grid
+         */
         private DataTable _getName; //field
         public DataTable Setname { get => this._getName; set { this._getName = value; } } //property
 
@@ -41,12 +44,9 @@ namespace FinalProject
             // Make the connection with the Server
             using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
             {                                        
-                
                 connection.Open();
-    
                 using (SqlCommand command = new SqlCommand(sqlCommand, connection))
                 {                   
-
                     // Create a DataSet.
                     DataTable dt = new DataTable();
                     dt.Columns.Add(new DataColumn("ID"));
@@ -83,6 +83,9 @@ namespace FinalProject
             } 
         }
 
+        /*
+         * Insert input into Database using the constructor
+         */
         public void insertData(string title, int year, string director, int genre, int scrore, decimal boxOffice)
         {
             string conn = MakeDBConnection();
@@ -132,13 +135,16 @@ namespace FinalProject
             return true;
         }
 
+
+        /*
+         * Using the find botton => all the values 
+         */
         private List<Movie> _FoundTitle;
         public List<Movie> FoundTitle { get => this._FoundTitle; set { this._FoundTitle = value; } }
         
         public void findingTitle(string searchTitle)
         {
             string sqlCommand = String.Format("SELECT Year, Director FROM Movies WHERE Title LIKE '%{0}%' ", searchTitle);
-            string[] genres = { "Animation", "Action", "Comedy", "Drama", "Horror", "Mystery", "Romance", "Science Fiction", "Western" };
 
             // Make the connection with the Server
             using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
