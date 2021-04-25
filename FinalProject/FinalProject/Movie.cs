@@ -25,13 +25,10 @@ namespace FinalProject
 
 	public class Emp
     {
-		public int ID { get; set; }
-		public string Title { get; set; }
-
-		public Emp(int id, string title)
-        {
-			this.ID = id;
-			this.Title = title;
-        }
+		private int _ID;
+		public int ID { get => this._ID; set { this._ID = value; } }		
+		
+		private string _director;
+		public string Director { get => this._director; set { this._director = value; } }
 	}
 }

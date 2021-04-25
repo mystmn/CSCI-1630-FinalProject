@@ -31,7 +31,7 @@ namespace FinalProject
         }
 
         private DataTable _getName; //field
-        public DataTable Setname { get { return this._getName; } set { this._getName = value; } } //property
+        public DataTable Setname { get => this._getName; set { this._getName = value; } } //property
 
         public void selectData()
         {
@@ -137,7 +137,7 @@ namespace FinalProject
         
         public void findingTitle(string searchTitle)
         {
-            string sqlCommand = $"SELECT * FROM Movies WHERE Title LIKE '%{searchTitle}%'";
+            string sqlCommand = String.Format("SELECT Year, Director FROM Movies WHERE Title LIKE '%{0}%' ", searchTitle);
             string[] genres = { "Animation", "Action", "Comedy", "Drama", "Horror", "Mystery", "Romance", "Science Fiction", "Western" };
 
             // Make the connection with the Server
@@ -148,28 +148,38 @@ namespace FinalProject
                 using (SqlCommand command = new SqlCommand(sqlCommand, connection))
                 {
                     // Create a DataSet.
-                    List<Movie> dt = new List<Movie>();
+                    Movie movies = new Movie();
+                    List<Movie> test = new List<Movie>();
 
                     SqlDataReader reader = command.ExecuteReader();
                     try
                     {
                         while (reader.Read())
                         {
-                            var movie = new Movie();
-                            movie.ID = reader.GetInt32(0);
-                            movie.Title = reader.GetString(1);
-                            movie.Year = reader.GetInt32(2);
-                            movie.Director = reader.GetString(3);
+                            movies.Year = reader.GetInt32(0);
+                            /*
+                            movies.ID = reader.GetInt32(0);
+                            
+                            movie.Title = reader.GetString(0);
+                            
+                            */
+                            movies.Director = reader.GetString(1);
+                            /*
                             int genreNumber = reader.GetInt32(4);
                             movie.Genre = genres[genreNumber];
 
                             movie.RottenTomatoesScore = reader.GetInt32(5);
                             movie.BoxOffice = reader.GetDecimal(6);
-
-                            dt.Add(movie);
-                            
-                            this.FoundTitle = dt;
+                            */
+                            test.Add(movies);
+                            this.FoundTitle = test;
                         }
+                    }
+                    catch
+                    {
+                        movies.Director = "Nothing found";
+                        test.Add(movies);
+                        this.FoundTitle = test; 
                     }
                     finally
                     {

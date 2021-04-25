@@ -27,11 +27,34 @@ namespace FinalProject
             {
                 errors.input(Messages.validation.Title);
             }
-            
-            conn.findingTitle(textBoxMovieTitle.Text);
-            List<Movie> x = conn.FoundTitle;
+            else
+            {
+                textBoxDirector.Text = "";
 
-            textBoxDirector.Text = string.Join(" ", x[0]);
+                conn.findingTitle(textBoxMovieTitle.Text);
+
+                foreach (Movie x in conn.FoundTitle)
+                {
+                    textBoxYear.Text = $"{x.Year}";
+                    textBoxDirector.Text = $"{x.Director}";
+                }
+            }
+
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        private void clearFields()
+        {
+            //Clear the textboxes
+            textBoxMovieTitle.Text = "";
+            textBoxYear.Text = "";
+            textBoxDirector.Text = "";
+            textBoxBoxOffice.Text = "";
+            textBoxRotten.Text = "";
+            textBoxBoxOffice.Text = "";
         }
     }
 }
