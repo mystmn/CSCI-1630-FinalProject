@@ -27,16 +27,26 @@ namespace FinalProject
 
         }
 
+        /*
+         * Button clears the input forms, to not confuse the next input fields with the submitted fields.
+         */
+
         private void buttonClear_Click(object sender, EventArgs e)
         {
             clearFields();
         }
 
+        /*
+         * Closing the Add Form
+         */
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+        /*
+         * Add Form takes the input, sends the information to an SQL database
+         */
         private void buttonAdd_Click(object sender, EventArgs e)
         {
 
@@ -44,7 +54,7 @@ namespace FinalProject
             decimal boxOffice;
             int rotten;
 
-            // Add button to AddMoviesForm
+            // Verify the fields match their data type
             if (String.IsNullOrEmpty(textBoxMovieTitle.Text))
             {
                 MessageBox.Show(errors.input(Messages.validation.Title));
@@ -70,6 +80,9 @@ namespace FinalProject
             }
             else
             {
+                /*
+                 * Starting section that takes the input, adds it to a class, and submits to DB
+                 */
                 List<Movie> movies = new List<Movie>();
 
                 var eachMovie = new Movie();
@@ -83,7 +96,12 @@ namespace FinalProject
 
                 movies.Add(eachMovie);
 
+                // Replace with the List<Movie> Genre function
                 int fakegenre = 0;
+
+                /*
+                 * Establish a connection with the DB and insert code.
+                 */
 
                 try
                 {
