@@ -20,30 +20,6 @@ namespace FinalProject
             InitializeComponent();
         }
 
-
-        // Test Button that will need to be removed later
-        private void buttonTest_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /*
-         * Button clears the input forms, to not confuse the next input fields with the submitted fields.
-         */
-
-        private void buttonClear_Click(object sender, EventArgs e)
-        {
-            clearFields();
-        }
-
-        /*
-         * Closing the Add Form
-         */
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         /*
          * Add Form takes the input, sends the information to an SQL database
          */
@@ -133,6 +109,30 @@ namespace FinalProject
             textBoxGenre.Text = "";
             textBoxRotten.Text = "";
             textBoxBoxOffice.Text = "";
+        }
+        // Test Button that will need to be removed later
+        private void buttonTest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /*
+         * Button clears the input forms, to not confuse the next input fields with the submitted fields.
+         */
+
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            clearFields();
+        }
+
+
+        /*
+         * Closing the Add Form
+         */
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

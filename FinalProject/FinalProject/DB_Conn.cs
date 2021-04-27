@@ -64,13 +64,13 @@ namespace FinalProject
                         while (reader.Read())
                         {
                             dt.Rows.Add(
-                                reader.GetFieldValue<int>(0), 
-                                reader.GetFieldValue<string>(1),
-                                reader.GetFieldValue<int>(2),
-                                reader.GetFieldValue<string>(3),
-                                reader.GetFieldValue<int>(4),
-                                reader.GetFieldValue<int>(5),
-                                reader.GetFieldValue<decimal>(6)
+                                reader.GetValue(0), 
+                                reader.GetValue(1),
+                                reader.GetValue(2),
+                                reader.GetValue(3),
+                                reader.GetValue(4),
+                                reader.GetValue(5),
+                                reader.GetValue(6)
                             );
                             this.Setname = dt;
                         }
@@ -144,7 +144,8 @@ namespace FinalProject
         
         public void findingTitle(string searchTitle)
         {
-            string sqlCommand = String.Format("SELECT Year, Director FROM Movies WHERE Title LIKE '%{0}%' ", searchTitle);
+            //string sqlCommand = String.Format("SELECT Title, Year, Director, Genre, RottenTomatoesScore, TotalEarned FROM Movies WHERE Title LIKE '%{0}%' ", searchTitle);
+            string sqlCommand = String.Format("SELECT Title, Year, Director, RottenTomatoesScore, TotalEarned FROM Movies WHERE Title LIKE '%{0}%' ", searchTitle);
 
             // Make the connection with the Server
             using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
@@ -155,37 +156,27 @@ namespace FinalProject
                 {
                     // Create a DataSet.
                     Movie movies = new Movie();
-                    List<Movie> test = new List<Movie>();
+                    List<Movie> storeMovies = new List<Movie>();
 
                     SqlDataReader reader = command.ExecuteReader();
                     try
                     {
                         while (reader.Read())
                         {
-                            movies.Year = reader.GetInt32(0);
-                            /*
-                            movies.ID = reader.GetInt32(0);
-                            
-                            movie.Title = reader.GetString(0);
-                            
-                            */
-                            movies.Director = reader.GetString(1);
-                            /*
-                            int genreNumber = reader.GetInt32(4);
-                            movie.Genre = genres[genreNumber];
+                           // Pulling data from the DB. If null return values zero or " ";
 
-                            movie.RottenTomatoesScore = reader.GetInt32(5);
-                            movie.BoxOffice = reader.GetDecimal(6);
+                            movies.Title = reader.GetValue(0) != DBNull.Value ? reader.GetString(0) : null;
+                            movies.Year = reader.GetValue(1) != DBNull.Value ? reader.GetInt32(1) : 0;
+                            movies.Director = reader.GetValue(2) != DBNull.Value ? reader.GetString(2) : " ";
+                            movies.RottenTomatoesScore = reader.GetValue(3) != DBNull.Value  ? reader.GetInt32(3) : 0;
+                            movies.BoxOffice = reader.GetValue(4) != DBNull.Value ? reader.GetDecimal(4) : 0.0m;
+
+                            /*
+                            movies.Genre = reader.GetString(3) != null ? reader.GetString(3) : "Null";
                             */
-                            test.Add(movies);
-                            this.FoundTitle = test;
+                            storeMovies.Add(movies);
+                            this.FoundTitle = storeMovies;
                         }
-                    }
-                    catch
-                    {
-                        movies.Director = "Nothing found";
-                        test.Add(movies);
-                        this.FoundTitle = test; 
                     }
                     finally
                     {

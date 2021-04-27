@@ -12,8 +12,11 @@ namespace FinalProject
 {
     public partial class FormDeleteMovies : Form
     {
+        // Messages successful and failers
         Messages errors = new Messages();
 
+        // Make DB connection
+        DB_Conn conn = new DB_Conn();
         public FormDeleteMovies()
         {
             InitializeComponent();
@@ -24,32 +27,34 @@ namespace FinalProject
          */
         private void buttonFindMovie_Click(object sender, EventArgs e)
         {
+            string title = textBoxMovieTitle.Text;
+
             // Validate input
-            if (!string.IsNullOrEmpty(textBoxBoxOffice.Text))
+            if (string.IsNullOrEmpty(title))
             {
-                errors.input(Messages.validation.Title);
+                MessageBox.Show(errors.input(Messages.validation.Title));
             }
             else
-            {            
-                // Make DB connection
-                DB_Conn conn = new DB_Conn();
-                
-                // Erase previous searches
-                textBoxDirector.Text = "";
+            {
+                conn.findingTitle(title);
 
-                // DB established, now SELECT title and year from DB
-                conn.findingTitle(textBoxMovieTitle.Text);
-
-                /*
-                 * NEEDS DONE - All values needs to be placed in their inputs
-                 */
-                foreach (Movie x in conn.FoundTitle)
+                if (conn.FoundTitle == null)
                 {
-                    textBoxYear.Text = $"{x.Year}";
-                    textBoxDirector.Text = $"{x.Director}";
+                    MessageBox.Show(String.Format("No movie found with that title. Try again...{0}", title));
+                }
+                else
+                {
+                    foreach (Movie x in conn.FoundTitle)
+                    {
+                        textBoxMovieTitle.Text = $"{x.Title}";
+                        textBoxYear.Text = $"{x.Year}";
+                        textBoxDirector.Text = $"{x.Director}";
+                        textBoxRotten.Text = $"{x.RottenTomatoesScore}";
+                        textBoxBoxOffice.Text = String.Format("{0:C}", x.BoxOffice);
+                        // Need to include Genre
+                    }
                 }
             }
-
         }
         /*
          * Closing formn
@@ -71,6 +76,16 @@ namespace FinalProject
             textBoxBoxOffice.Text = "";
             textBoxRotten.Text = "";
             textBoxBoxOffice.Text = "";
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            var item = conn.FoundTitle.Select(x => x.Title );
+
+            if(MessageBox.Show($"Would you like to delete {item.First()}?", "Delete Movie", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                MessageBox.Show("Deleted");
+            }
         }
     }
 }

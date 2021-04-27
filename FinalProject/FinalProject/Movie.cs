@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    class Movie
-    {
+	class Movie
+	{
 		public int ID { get; set; }
 
 		public string Title { get; set; }
@@ -16,7 +16,8 @@ namespace FinalProject
 
 		public string Director { get; set; }
 
-		public string Genre { get; set; }
+		//private List<string> _genre;
+		public string Genre { get;set;}
 
 		public int RottenTomatoesScore { get; set; }
 
