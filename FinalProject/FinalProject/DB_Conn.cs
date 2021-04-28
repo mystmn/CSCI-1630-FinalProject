@@ -122,17 +122,34 @@ namespace FinalProject
         { 
 
             string conn = MakeDBConnection();
-
+            
             // was the data successful?
             return true;
         }
         public bool deleteData(List<Movie> item)
-        { 
-
+        {
+            bool isDone = false;
             string conn = MakeDBConnection();
+            using (SqlConnection connection = new SqlConnection(conn))
+            using (SqlCommand command = new SqlCommand(
+            "DELETE FROM Movies"
+            + "WHERE ID = @Id",
+            connection))
+            {
+                command.Parameters.Add("Id", SqlDbType.Int).Value = item[0].ID;
+                connection.Open();
+                try
+                {
+                   command.ExecuteNonQuery();
 
-            // was the data successful?
-            return true;
+                }
+                finally
+                {
+                    isDone = true;
+                    connection.Close();
+                }
+                return isDone;
+            }
         }
 
 
