@@ -27,12 +27,4 @@ namespace FinalProject
 	/*
 	 *  Used this function for testing
 	 */
-	public class Emp
-    {
-		private int _ID;
-		public int ID { get => this._ID; set { this._ID = value; } }		
-		
-		private string _director;
-		public string Director { get => this._director; set { this._director = value; } }
-	}
 }
