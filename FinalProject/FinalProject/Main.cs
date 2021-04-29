@@ -15,7 +15,8 @@ namespace FinalProject
     {
         // Pull the default error messages
         Messages errors = new Messages();
-
+        
+        DB_Conn db_conn = new DB_Conn();
         public Main()
         {
             InitializeComponent();
@@ -26,7 +27,6 @@ namespace FinalProject
         private void showMainGrid()
         {
             // Pull Objects
-            DB_Conn db_conn = new DB_Conn();
             db_conn.selectData();
 
             // Grab the Grid from DB_conn.cs
@@ -66,7 +66,10 @@ namespace FinalProject
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-         
+            db_conn.selectData();
+            dataGridViewMaster.DataSource = db_conn.Setname;
+            dataGridViewMaster.Refresh();
+
         }
     }
 }
