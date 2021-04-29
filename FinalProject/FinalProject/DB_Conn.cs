@@ -126,13 +126,33 @@ namespace FinalProject
             // was the data successful?
             return true;
         }
-        public bool deleteData(List<Movie> item)
-        { 
-
+        public string DeleteData(int itemID)
+        {
             string conn = MakeDBConnection();
 
-            // was the data successful?
-            return true;
+            string sqlCommand = string.Format("DELETE FROM Movies WHERE Id='{0}'",itemID);
+
+            // Make the connection with the Server
+            using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(sqlCommand, connection))
+                {
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch(SystemException ex)
+                    {
+                        return ex.Message;
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                    return "successful";
+                }
+            }
         }
 
 
@@ -145,7 +165,7 @@ namespace FinalProject
         public void findingTitle(string searchTitle)
         {
             //string sqlCommand = String.Format("SELECT Title, Year, Director, Genre, RottenTomatoesScore, TotalEarned FROM Movies WHERE Title LIKE '%{0}%' ", searchTitle);
-            string sqlCommand = String.Format("SELECT Title, Year, Director, RottenTomatoesScore, TotalEarned FROM Movies WHERE Title LIKE '%{0}%' ", searchTitle);
+            string sqlCommand = String.Format("SELECT * FROM Movies WHERE Title LIKE '%{0}%' ", searchTitle);
 
             // Make the connection with the Server
             using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
@@ -165,11 +185,13 @@ namespace FinalProject
                         {
                            // Pulling data from the DB. If null return values zero or " ";
 
-                            movies.Title = reader.GetValue(0) != DBNull.Value ? reader.GetString(0) : null;
-                            movies.Year = reader.GetValue(1) != DBNull.Value ? reader.GetInt32(1) : 0;
-                            movies.Director = reader.GetValue(2) != DBNull.Value ? reader.GetString(2) : " ";
-                            movies.RottenTomatoesScore = reader.GetValue(3) != DBNull.Value  ? reader.GetInt32(3) : 0;
-                            movies.BoxOffice = reader.GetValue(4) != DBNull.Value ? reader.GetDecimal(4) : 0.0m;
+                            movies.ID = reader.GetValue(0) != DBNull.Value ? reader.GetInt32(0) : -1;
+                            movies.Title = reader.GetValue(1) != DBNull.Value ? reader.GetString(1) : null;
+                            movies.Year = reader.GetValue(2) != DBNull.Value ? reader.GetInt32(2) : 0;
+                            movies.Director = reader.GetValue(3) != DBNull.Value ? reader.GetString(3) : " ";
+                            movies.Genre = reader.GetValue(4) != DBNull.Value ? Convert.ToString(reader.GetInt32(4)) : "";
+                            movies.RottenTomatoesScore = reader.GetValue(5) != DBNull.Value  ? reader.GetInt32(5) : 0;
+                            movies.BoxOffice = reader.GetValue(6) != DBNull.Value ? reader.GetDecimal(6) : 0.0m;
 
                             /*
                             movies.Genre = reader.GetString(3) != null ? reader.GetString(3) : "Null";

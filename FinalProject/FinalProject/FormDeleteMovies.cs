@@ -80,11 +80,33 @@ namespace FinalProject
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            var item = conn.FoundTitle.Select(x => x.Title );
+            string title = textBoxMovieTitle.Text;
 
-            if(MessageBox.Show($"Would you like to delete {item.First()}?", "Delete Movie", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            // Validate there's something to delete in title
+            if (string.IsNullOrEmpty(title))
             {
-                MessageBox.Show("Deleted");
+                MessageBox.Show(errors.input(Messages.validation.Title));
+            }
+            else
+            {
+                var itemTitle = conn.FoundTitle.Select(x => x.Title);
+                var itemID = conn.FoundTitle.Select(x => x.ID);
+
+                if (MessageBox.Show($"Would you like to delete {itemTitle.First()} from row {itemID.First()}?", "Delete Movie", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    string varID = conn.DeleteData(itemID.First());
+                    string returnMessage = "";
+
+                    if(varID == "successful")
+                    {
+                        returnMessage = $"Movie deletion was {varID}";
+                    }
+                    else
+                    {
+                        returnMessage = $"Movie deletion gave error: {varID}";
+                    }
+                    MessageBox.Show($"{returnMessage}");
+                }
             }
         }
     }
