@@ -65,16 +65,6 @@ namespace FinalProject
             this.textBoxMovieTitle.Size = new System.Drawing.Size(403, 20);
             this.textBoxMovieTitle.TabIndex = 1;
             // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Location = new System.Drawing.Point(59, 392);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
-            this.buttonDelete.TabIndex = 8;
-            this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
             // textBoxYear
             // 
             this.textBoxYear.Location = new System.Drawing.Point(140, 98);

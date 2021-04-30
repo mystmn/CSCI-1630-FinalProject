@@ -78,7 +78,7 @@ namespace FinalProject
             textBoxBoxOffice.Text = "";
         }
 
-        private void buttonDelete_Click(object sender, EventArgs e)
+        private void test()
         {
             string title = textBoxMovieTitle.Text;
 

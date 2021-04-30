@@ -118,13 +118,45 @@ namespace FinalProject
                 }
             }
         }
-        public bool updateData(List<Movie> item)
-        { 
-
+        public string updateData(int id, string title, int year, string director, int genre, int scrore, decimal boxOffice)
+        {
             string conn = MakeDBConnection();
+            string sqlCommand =
+                "Update Movies " +
+                "SET Title='@param1', Year='@param2', Director='@param3', Genre='@param4', RottenTomatoesScore='@param5', TotalEarned='@param6'" +
+                "Where Id=@param0";
 
-            // was the data successful?
-            return true;
+            // Make the connection with the Server
+            using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(sqlCommand, connection))
+                {
+                    command.Parameters.Add("@param0", SqlDbType.Int, 50).Value = id;
+                    command.Parameters.Add("@param1", SqlDbType.VarChar, 50).Value = title;
+                    command.Parameters.Add("@param2", SqlDbType.Int).Value = year;
+                    command.Parameters.Add("@param3", SqlDbType.VarChar, 50).Value = director;
+                    command.Parameters.Add("@param4", SqlDbType.Int).Value = genre;
+                    command.Parameters.Add("@param5", SqlDbType.Int).Value = scrore;
+                    command.Parameters.Add("@param6", SqlDbType.Decimal).Value = boxOffice;
+                    command.CommandType = CommandType.Text;
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SystemException ex)
+                    {
+                        return ex.Message;
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                    return "successful";
+                }
+            }
         }
         public string DeleteData(int itemID)
         {

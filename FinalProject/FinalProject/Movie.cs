@@ -23,8 +23,4 @@ namespace FinalProject
 
 		public decimal BoxOffice { get; set; }
 	}
-
-	/*
-	 *  Used this function for testing
-	 */
 }

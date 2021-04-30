@@ -12,63 +12,43 @@ namespace FinalProject
 {
     public partial class FormUpdateMovie : Form
     {
-        // Pull the default error messages
-        Messages errors = new Messages();
-
+        Messages errors = new Messages(); // Messages successful and failers
+       
+        DB_Conn conn = new DB_Conn(); // Make DB connection
         public FormUpdateMovie()
         {
             InitializeComponent();
         }
 
-        private void buttonUpdate_Click(object sender, EventArgs e)
+        private void button(object sender, EventArgs e)
         {
-            int year;
-            int boxOffice;
-            int rotten;
+            string title = textBoxMovieTitle.Text;
 
-            // Add button to AddMoviesForm
-            if (String.IsNullOrEmpty(textBoxMovieTitle.Text))
+            // Validate input
+            if (string.IsNullOrEmpty(title))
             {
                 MessageBox.Show(errors.input(Messages.validation.Title));
             }
-            else if (!int.TryParse(textBoxYear.Text, out year))
-            {
-                MessageBox.Show(errors.input(Messages.validation.Year));
-            }
-            else if (String.IsNullOrEmpty(textBoxDirector.Text))
-            {
-                MessageBox.Show(errors.input(Messages.validation.Director));
-            }
-            else if (String.IsNullOrEmpty(textBoxGenre.Text))
-            {
-                MessageBox.Show(errors.input(Messages.validation.Genre));
-            }
-            else if (!int.TryParse(textBoxRotten.Text, out rotten))
-            {
-                MessageBox.Show(errors.input(Messages.validation.Rotten));
-
-            }
-            else if (!int.TryParse(textBoxBoxOffice.Text, out boxOffice))
-            {
-                MessageBox.Show(errors.input(Messages.validation.BoxOffice));
-            }
             else
             {
-                // Need to search for a movie title
-                bool wasMovieFound = true;
-                if(wasMovieFound)
+                conn.findingTitle(title);
+
+                if (conn.FoundTitle == null)
                 {
-                    // establish_DB(movie.add())
+                    MessageBox.Show(String.Format("No movie found with that title. Try again...{0}", title));
                 }
                 else
                 {
-                    //Look for the movie again
+                    foreach (Movie x in conn.FoundTitle)
+                    {
+                        textBoxMovieTitle.Text = $"{x.Title}";
+                        textBoxYear.Text = $"{x.Year}";
+                        textBoxDirector.Text = $"{x.Director}";
+                        textBoxRotten.Text = $"{x.RottenTomatoesScore}";
+                        textBoxBoxOffice.Text = String.Format("{0:C}", x.BoxOffice);
+                        // Need to include Genre
+                    }
                 }
-
-                // Add the query finds to their fields
-
-                // Make connection to database and update changes
-
             }
         }
         private void establish_DB(List<Movie> movie)
@@ -82,7 +62,7 @@ namespace FinalProject
                 DB_Conn db_Conn = new DB_Conn(); // making connection to database
 
                 //Did the database successfully INSERT the data; return a bool
-                bool status = db_Conn.updateData(movie);
+                bool status = db_Conn.updateData(Movie);
 
                 // Let the user know that the update worked or didn't work
                 if (status)
@@ -107,6 +87,16 @@ namespace FinalProject
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
+            clearFields();
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            // Close button
+            Close();
+        }
+        private void clearFields()
+        {
             //Clear the textboxes
             textBoxMovieTitle.Text = "";
             textBoxYear.Text = "";
@@ -114,12 +104,6 @@ namespace FinalProject
             textBoxGenre.Text = "";
             textBoxRotten.Text = "";
             textBoxBoxOffice.Text = "";
-        }
-
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            // Close button
-            Close();
         }
     }
 }
