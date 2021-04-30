@@ -70,7 +70,7 @@ namespace FinalProject
             this.buttonDelete.Location = new System.Drawing.Point(59, 392);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(75, 23);
-            this.buttonDelete.TabIndex = 2;
+            this.buttonDelete.TabIndex = 8;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
@@ -80,7 +80,7 @@ namespace FinalProject
             this.textBoxYear.Location = new System.Drawing.Point(140, 98);
             this.textBoxYear.Name = "textBoxYear";
             this.textBoxYear.Size = new System.Drawing.Size(100, 20);
-            this.textBoxYear.TabIndex = 4;
+            this.textBoxYear.TabIndex = 3;
             // 
             // label2
             // 
@@ -96,7 +96,7 @@ namespace FinalProject
             this.textBoxDirector.Location = new System.Drawing.Point(140, 169);
             this.textBoxDirector.Name = "textBoxDirector";
             this.textBoxDirector.Size = new System.Drawing.Size(214, 20);
-            this.textBoxDirector.TabIndex = 6;
+            this.textBoxDirector.TabIndex = 4;
             // 
             // label3
             // 
@@ -112,7 +112,7 @@ namespace FinalProject
             this.textBoxRotten.Location = new System.Drawing.Point(248, 286);
             this.textBoxRotten.Name = "textBoxRotten";
             this.textBoxRotten.Size = new System.Drawing.Size(134, 20);
-            this.textBoxRotten.TabIndex = 8;
+            this.textBoxRotten.TabIndex = 6;
             // 
             // label4
             // 
@@ -128,7 +128,7 @@ namespace FinalProject
             this.textBoxBoxOffice.Location = new System.Drawing.Point(514, 286);
             this.textBoxBoxOffice.Name = "textBoxBoxOffice";
             this.textBoxBoxOffice.Size = new System.Drawing.Size(144, 20);
-            this.textBoxBoxOffice.TabIndex = 10;
+            this.textBoxBoxOffice.TabIndex = 7;
             // 
             // label5
             // 
@@ -144,7 +144,7 @@ namespace FinalProject
             this.buttonFindMovie.Location = new System.Drawing.Point(570, 34);
             this.buttonFindMovie.Name = "buttonFindMovie";
             this.buttonFindMovie.Size = new System.Drawing.Size(75, 23);
-            this.buttonFindMovie.TabIndex = 11;
+            this.buttonFindMovie.TabIndex = 2;
             this.buttonFindMovie.Text = "Find";
             this.buttonFindMovie.UseVisualStyleBackColor = true;
             this.buttonFindMovie.Click += new System.EventHandler(this.buttonFindMovie_Click);
@@ -174,23 +174,24 @@ namespace FinalProject
             this.comboBoxGenre.Location = new System.Drawing.Point(140, 227);
             this.comboBoxGenre.Name = "comboBoxGenre";
             this.comboBoxGenre.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxGenre.TabIndex = 13;
+            this.comboBoxGenre.TabIndex = 5;
             // 
             // buttonClear
             // 
             this.buttonClear.Location = new System.Drawing.Point(307, 392);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(75, 23);
-            this.buttonClear.TabIndex = 14;
+            this.buttonClear.TabIndex = 9;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonClose
             // 
             this.buttonClose.Location = new System.Drawing.Point(573, 392);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
-            this.buttonClose.TabIndex = 15;
+            this.buttonClose.TabIndex = 10;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
@@ -229,6 +230,7 @@ namespace FinalProject
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormDeleteMovies";
             this.Text = "Delete Movie";
+            this.Load += new System.EventHandler(this.FormDeleteMovies_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

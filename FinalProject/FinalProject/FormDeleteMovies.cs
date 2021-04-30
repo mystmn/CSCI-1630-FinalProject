@@ -109,5 +109,15 @@ namespace FinalProject
                 }
             }
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            clearFields();
+        }
+
+        private void FormDeleteMovies_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

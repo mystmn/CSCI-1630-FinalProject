@@ -54,7 +54,7 @@ namespace FinalProject
             this.buttonClose.Location = new System.Drawing.Point(585, 393);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
-            this.buttonClose.TabIndex = 31;
+            this.buttonClose.TabIndex = 10;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
@@ -64,7 +64,7 @@ namespace FinalProject
             this.buttonClear.Location = new System.Drawing.Point(319, 393);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(75, 23);
-            this.buttonClear.TabIndex = 30;
+            this.buttonClear.TabIndex = 9;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
@@ -85,7 +85,7 @@ namespace FinalProject
             this.textBoxGenre.Location = new System.Drawing.Point(152, 228);
             this.textBoxGenre.Name = "textBoxGenre";
             this.textBoxGenre.Size = new System.Drawing.Size(121, 21);
-            this.textBoxGenre.TabIndex = 29;
+            this.textBoxGenre.TabIndex = 5;
             // 
             // label6
             // 
@@ -101,7 +101,7 @@ namespace FinalProject
             this.buttonFindMovie.Location = new System.Drawing.Point(582, 35);
             this.buttonFindMovie.Name = "buttonFindMovie";
             this.buttonFindMovie.Size = new System.Drawing.Size(75, 23);
-            this.buttonFindMovie.TabIndex = 27;
+            this.buttonFindMovie.TabIndex = 2;
             this.buttonFindMovie.Text = "Find";
             this.buttonFindMovie.UseVisualStyleBackColor = true;
             // 
@@ -110,7 +110,7 @@ namespace FinalProject
             this.textBoxBoxOffice.Location = new System.Drawing.Point(533, 289);
             this.textBoxBoxOffice.Name = "textBoxBoxOffice";
             this.textBoxBoxOffice.Size = new System.Drawing.Size(144, 20);
-            this.textBoxBoxOffice.TabIndex = 26;
+            this.textBoxBoxOffice.TabIndex = 7;
             // 
             // label5
             // 
@@ -126,7 +126,7 @@ namespace FinalProject
             this.textBoxRotten.Location = new System.Drawing.Point(267, 289);
             this.textBoxRotten.Name = "textBoxRotten";
             this.textBoxRotten.Size = new System.Drawing.Size(134, 20);
-            this.textBoxRotten.TabIndex = 24;
+            this.textBoxRotten.TabIndex = 6;
             // 
             // label4
             // 
@@ -142,7 +142,7 @@ namespace FinalProject
             this.textBoxDirector.Location = new System.Drawing.Point(152, 170);
             this.textBoxDirector.Name = "textBoxDirector";
             this.textBoxDirector.Size = new System.Drawing.Size(214, 20);
-            this.textBoxDirector.TabIndex = 22;
+            this.textBoxDirector.TabIndex = 4;
             // 
             // label3
             // 
@@ -158,7 +158,7 @@ namespace FinalProject
             this.textBoxYear.Location = new System.Drawing.Point(152, 99);
             this.textBoxYear.Name = "textBoxYear";
             this.textBoxYear.Size = new System.Drawing.Size(100, 20);
-            this.textBoxYear.TabIndex = 20;
+            this.textBoxYear.TabIndex = 3;
             // 
             // label2
             // 
@@ -174,7 +174,7 @@ namespace FinalProject
             this.buttonUpdate.Location = new System.Drawing.Point(71, 393);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
-            this.buttonUpdate.TabIndex = 18;
+            this.buttonUpdate.TabIndex = 8;
             this.buttonUpdate.Text = "Update";
             this.buttonUpdate.UseVisualStyleBackColor = true;
             this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
@@ -184,7 +184,7 @@ namespace FinalProject
             this.textBoxMovieTitle.Location = new System.Drawing.Point(152, 37);
             this.textBoxMovieTitle.Name = "textBoxMovieTitle";
             this.textBoxMovieTitle.Size = new System.Drawing.Size(403, 20);
-            this.textBoxMovieTitle.TabIndex = 17;
+            this.textBoxMovieTitle.TabIndex = 1;
             // 
             // label1
             // 
