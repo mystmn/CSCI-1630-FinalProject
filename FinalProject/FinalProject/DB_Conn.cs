@@ -118,7 +118,7 @@ namespace FinalProject
                 }
             }
         }
-        public string updateData(int id, string title, int year, string director, int genre, int scrore, decimal boxOffice)
+        public string updateData(int id, string title, int year, string director, int genre, int score, decimal boxOffice)
         {
             string conn = MakeDBConnection();
             string sqlCommand =
@@ -138,7 +138,7 @@ namespace FinalProject
                     command.Parameters.Add("@param2", SqlDbType.Int).Value = year;
                     command.Parameters.Add("@param3", SqlDbType.VarChar, 50).Value = director;
                     command.Parameters.Add("@param4", SqlDbType.Int).Value = genre;
-                    command.Parameters.Add("@param5", SqlDbType.Int).Value = scrore;
+                    command.Parameters.Add("@param5", SqlDbType.Int).Value = score;
                     command.Parameters.Add("@param6", SqlDbType.Decimal).Value = boxOffice;
                     command.CommandType = CommandType.Text;
 

@@ -78,7 +78,12 @@ namespace FinalProject
             textBoxBoxOffice.Text = "";
         }
 
-        private void test()
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            clearFields();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
         {
             string title = textBoxMovieTitle.Text;
 
@@ -97,7 +102,7 @@ namespace FinalProject
                     string varID = conn.DeleteData(itemID.First());
                     string returnMessage = "";
 
-                    if(varID == "successful")
+                    if (varID == "successful")
                     {
                         returnMessage = $"Movie deletion was {varID}";
                     }
@@ -108,16 +113,6 @@ namespace FinalProject
                     MessageBox.Show($"{returnMessage}");
                 }
             }
-        }
-
-        private void buttonClear_Click(object sender, EventArgs e)
-        {
-            clearFields();
-        }
-
-        private void FormDeleteMovies_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

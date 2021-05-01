@@ -42,10 +42,10 @@ namespace FinalProject
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxYear = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonUpdate = new System.Windows.Forms.Button();
-            this.textBoxMovieTitle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.textBoxTitle = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +104,7 @@ namespace FinalProject
             this.buttonFindMovie.TabIndex = 2;
             this.buttonFindMovie.Text = "Find";
             this.buttonFindMovie.UseVisualStyleBackColor = true;
+            this.buttonFindMovie.Click += new System.EventHandler(this.buttonFindMovie_Click_1);
             // 
             // textBoxBoxOffice
             // 
@@ -169,23 +170,6 @@ namespace FinalProject
             this.label2.TabIndex = 19;
             this.label2.Text = "Year:";
             // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.Location = new System.Drawing.Point(71, 393);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
-            this.buttonUpdate.TabIndex = 8;
-            this.buttonUpdate.Text = "Update";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
-            // 
-            // textBoxMovieTitle
-            // 
-            this.textBoxMovieTitle.Location = new System.Drawing.Point(152, 37);
-            this.textBoxMovieTitle.Name = "textBoxMovieTitle";
-            this.textBoxMovieTitle.Size = new System.Drawing.Size(403, 20);
-            this.textBoxMovieTitle.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -205,11 +189,30 @@ namespace FinalProject
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Location = new System.Drawing.Point(117, 393);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdate.TabIndex = 8;
+            this.buttonUpdate.Text = "Update";
+            this.buttonUpdate.UseVisualStyleBackColor = true;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
+            // 
+            // textBoxTitle
+            // 
+            this.textBoxTitle.Location = new System.Drawing.Point(152, 38);
+            this.textBoxTitle.Name = "textBoxTitle";
+            this.textBoxTitle.Size = new System.Drawing.Size(424, 20);
+            this.textBoxTitle.TabIndex = 33;
+            // 
             // FormUpdateMovie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxTitle);
+            this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.textBoxGenre);
@@ -223,8 +226,6 @@ namespace FinalProject
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxYear);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.buttonUpdate);
-            this.Controls.Add(this.textBoxMovieTitle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormUpdateMovie";
@@ -250,9 +251,9 @@ namespace FinalProject
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxYear;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button buttonUpdate;
-        private System.Windows.Forms.TextBox textBoxMovieTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonUpdate;
+        private System.Windows.Forms.TextBox textBoxTitle;
     }
 }

@@ -15,14 +15,26 @@ namespace FinalProject
         Messages errors = new Messages(); // Messages successful and failers
        
         DB_Conn conn = new DB_Conn(); // Make DB connection
+
         public FormUpdateMovie()
         {
             InitializeComponent();
         }
 
-        private void button(object sender, EventArgs e)
+        private void clearFields()
         {
-            string title = textBoxMovieTitle.Text;
+            //Clear the textboxes
+            textBoxTitle.Text = "";
+            textBoxYear.Text = "";
+            textBoxDirector.Text = "";
+            textBoxGenre.Text = "";
+            textBoxRotten.Text = "";
+            textBoxBoxOffice.Text = "";
+        }
+
+        private void buttonFindMovie_Click(object sender, EventArgs e)
+        {
+            string title = textBoxTitle.Text;
 
             // Validate input
             if (string.IsNullOrEmpty(title))
@@ -41,7 +53,7 @@ namespace FinalProject
                 {
                     foreach (Movie x in conn.FoundTitle)
                     {
-                        textBoxMovieTitle.Text = $"{x.Title}";
+                        textBoxTitle.Text = $"{x.Title}";
                         textBoxYear.Text = $"{x.Year}";
                         textBoxDirector.Text = $"{x.Director}";
                         textBoxRotten.Text = $"{x.RottenTomatoesScore}";
@@ -51,40 +63,41 @@ namespace FinalProject
                 }
             }
         }
-        private void establish_DB(List<Movie> movie)
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            /*
-            * This is there the db code goes. Make sure that the connection methods are located under DB_Conn.cs
-            */
-            try
+            string title = textBoxTitle.Text;
+
+            // Validate there's something to delete in title
+            if (string.IsNullOrEmpty(title))
             {
-                // Add movie to DB - This is filler code for now. 
-                DB_Conn db_Conn = new DB_Conn(); // making connection to database
+                MessageBox.Show(errors.input(Messages.validation.Title));
+            }
+            else
+            {
+                int itemID = conn.FoundTitle.Select(x => x.ID).First();
+                var itemTitle = textBoxTitle.Text;
+                int itemYear = Convert.ToInt32(textBoxYear.Text);
+                string itemDirector = textBoxDirector.Text;
+                int itemGenre = Convert.ToInt32(textBoxGenre.Text);
+                int itemScore = Convert.ToInt32(textBoxRotten.Text);
+                decimal itemBoxoffice = Convert.ToDecimal(textBoxBoxOffice.Text.Replace("$", string.Empty ));
 
-                //Did the database successfully INSERT the data; return a bool
-                bool status = db_Conn.updateData(Movie);
 
-                // Let the user know that the update worked or didn't work
-                if (status)
+                string varID = conn.updateData(itemID, itemTitle, itemYear, itemDirector, itemGenre, itemScore, itemBoxoffice);
+                string returnMessage = "";
+
+                if (varID == "successful")
                 {
-                   
-                    errors.db_conn_status(Messages.dbVal.DB_Conn_succ);
-                    MessageBox.Show($"{status}");
-                    Close();
+                    returnMessage = $"Movie update was {varID}";
                 }
                 else
                 {
-                    MessageBox.Show(errors.db_conn_status(Messages.dbVal.DB_Conn_fail));
-                    // Give the user a chance to make changes without loosing their current data
+                    returnMessage = $"Movie update gave error: {varID}";
                 }
-                
-            }
-            catch (Exception system_error)
-            {
-                MessageBox.Show(system_error.Message);
+                MessageBox.Show($"{returnMessage}");
             }
         }
-
         private void buttonClear_Click(object sender, EventArgs e)
         {
             clearFields();
@@ -95,15 +108,37 @@ namespace FinalProject
             // Close button
             Close();
         }
-        private void clearFields()
+
+        private void buttonFindMovie_Click_1(object sender, EventArgs e)
         {
-            //Clear the textboxes
-            textBoxMovieTitle.Text = "";
-            textBoxYear.Text = "";
-            textBoxDirector.Text = "";
-            textBoxGenre.Text = "";
-            textBoxRotten.Text = "";
-            textBoxBoxOffice.Text = "";
+                        string title = textBoxTitle.Text;
+
+            // Validate input
+            if (string.IsNullOrEmpty(title))
+            {
+                MessageBox.Show(errors.input(Messages.validation.Title));
+            }
+            else
+            {
+                conn.findingTitle(title);
+
+                if (conn.FoundTitle == null)
+                {
+                    MessageBox.Show(String.Format("No movie found with that title. Try again...{0}", title));
+                }
+                else
+                {
+                    foreach (Movie x in conn.FoundTitle)
+                    {
+                        textBoxTitle.Text = $"{x.Title}";
+                        textBoxYear.Text = $"{x.Year}";
+                        textBoxDirector.Text = $"{x.Director}";
+                        textBoxRotten.Text = $"{x.RottenTomatoesScore}";
+                        textBoxBoxOffice.Text = String.Format("{0:C}", x.BoxOffice);
+                        // Need to include Genre
+                    }
+                }
+            }
         }
     }
 }
