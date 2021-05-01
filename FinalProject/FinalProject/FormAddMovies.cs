@@ -73,7 +73,7 @@ namespace FinalProject
                 movies.Add(eachMovie);
 
                 // Replace with the List<Movie> Genre function
-                int genreInt;
+                int genreInt = -1;
                 if (eachMovie.Genre == "Animation")
                 {
                     genreInt = 0;
