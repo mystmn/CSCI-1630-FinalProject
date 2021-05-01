@@ -73,7 +73,55 @@ namespace FinalProject
                 movies.Add(eachMovie);
 
                 // Replace with the List<Movie> Genre function
-                int fakegenre = 0;
+                int genreInt;
+                if (eachMovie.Genre == "Animation")
+                {
+                    genreInt = 0;
+                }
+                else if (eachMovie.Genre == "Action")
+                {
+                    genreInt = 1;
+
+                }
+                else if (eachMovie.Genre == "Comedy")
+                {
+
+                    genreInt = 2;
+                }
+                else if (eachMovie.Genre == "Drama")
+                {
+                    genreInt = 3;
+
+                }
+                else if (eachMovie.Genre == "Horror")
+                {
+                    genreInt = 4;
+
+                }
+                else if (eachMovie.Genre == "Mystery")
+                {
+                    genreInt = 5;
+
+                }
+                else if (eachMovie.Genre == "Romance")
+                {
+                    genreInt = 6;
+
+                }
+                else if (eachMovie.Genre == "Science Fiction")
+                {
+                    genreInt = 7;
+
+                }
+                else if (eachMovie.Genre == "Western")
+                {
+                    genreInt = 8;
+
+                }
+                else
+                {
+                    MessageBox.Show("Please Select a Genre");
+                }
 
                 /*
                  * Establish a connection with the DB and insert code.
@@ -83,7 +131,7 @@ namespace FinalProject
                 {
                     DB_Conn db_conn = new DB_Conn();
                     db_conn.insertData(
-                        textBoxMovieTitle.Text, year, textBoxDirector.Text, fakegenre, rotten, boxOffice
+                        textBoxMovieTitle.Text, year, textBoxDirector.Text, genreInt, rotten, boxOffice
                    );
                     MessageBox.Show($"{textBoxMovieTitle.Text} has been submitted.");
                     clearFields();
@@ -133,6 +181,21 @@ namespace FinalProject
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxGenre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FormAddMovies_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
