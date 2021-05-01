@@ -74,46 +74,46 @@ namespace FinalProject
 
                 // Replace with the List<Movie> Genre function
                 int genreInt = -1;
-                if (eachMovie.Genre == "Animation")
+                if (String.Equals(eachMovie.Genre,"Animation"))
                 {
                     genreInt = 0;
                 }
-                else if (eachMovie.Genre == "Action")
+                else if (String.Equals(eachMovie.Genre, "Action"))
                 {
                     genreInt = 1;
 
                 }
-                else if (eachMovie.Genre == "Comedy")
+                else if (String.Equals(eachMovie.Genre, "Comedy"))
                 {
 
                     genreInt = 2;
                 }
-                else if (eachMovie.Genre == "Drama")
+                else if (String.Equals(eachMovie.Genre, "Drama"))
                 {
                     genreInt = 3;
 
                 }
-                else if (eachMovie.Genre == "Horror")
+                else if (String.Equals(eachMovie.Genre, "Horror"))
                 {
                     genreInt = 4;
 
                 }
-                else if (eachMovie.Genre == "Mystery")
+                else if (String.Equals(eachMovie.Genre, "Mystery"))
                 {
                     genreInt = 5;
 
                 }
-                else if (eachMovie.Genre == "Romance")
+                else if (String.Equals(eachMovie.Genre, "Romance"))
                 {
                     genreInt = 6;
 
                 }
-                else if (eachMovie.Genre == "Science Fiction")
+                else if (String.Equals(eachMovie.Genre, "Science Fiction"))
                 {
                     genreInt = 7;
 
                 }
-                else if (eachMovie.Genre == "Western")
+                else if (String.Equals(eachMovie.Genre, "Western"))
                 {
                     genreInt = 8;
 
