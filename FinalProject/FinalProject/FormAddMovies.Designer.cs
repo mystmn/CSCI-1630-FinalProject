@@ -35,7 +35,6 @@ namespace FinalProject
             this.labelYear = new System.Windows.Forms.Label();
             this.textBoxDirector = new System.Windows.Forms.TextBox();
             this.labelDirector = new System.Windows.Forms.Label();
-            this.textBoxGenre = new System.Windows.Forms.TextBox();
             this.labelGenre = new System.Windows.Forms.Label();
             this.textBoxRotten = new System.Windows.Forms.TextBox();
             this.labelRottenTomato = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@ namespace FinalProject
             this.buttonClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonTest = new System.Windows.Forms.Button();
+            this.textBoxGenre = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,13 +96,6 @@ namespace FinalProject
             this.labelDirector.Size = new System.Drawing.Size(47, 13);
             this.labelDirector.TabIndex = 4;
             this.labelDirector.Text = "Director:";
-            // 
-            // textBoxGenre
-            // 
-            this.textBoxGenre.Location = new System.Drawing.Point(168, 257);
-            this.textBoxGenre.Name = "textBoxGenre";
-            this.textBoxGenre.Size = new System.Drawing.Size(172, 20);
-            this.textBoxGenre.TabIndex = 7;
             // 
             // labelGenre
             // 
@@ -195,11 +188,31 @@ namespace FinalProject
             this.buttonTest.UseVisualStyleBackColor = true;
             this.buttonTest.Click += new System.EventHandler(this.buttonTest_Click);
             // 
+            // textBoxGenre
+            // 
+            this.textBoxGenre.FormattingEnabled = true;
+            this.textBoxGenre.Items.AddRange(new object[] {
+            "Animation",
+            "Action",
+            "Comedy",
+            "Drama",
+            "Horror",
+            "Mystery",
+            "Romance",
+            "Science Fiction",
+            "Western"});
+            this.textBoxGenre.Location = new System.Drawing.Point(168, 257);
+            this.textBoxGenre.Name = "textBoxGenre";
+            this.textBoxGenre.Size = new System.Drawing.Size(172, 21);
+            this.textBoxGenre.TabIndex = 18;
+            this.textBoxGenre.SelectedIndexChanged += new System.EventHandler(this.textBoxGenre_SelectedIndexChanged);
+            // 
             // FormAddMovies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxGenre);
             this.Controls.Add(this.buttonTest);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonClear);
@@ -208,7 +221,6 @@ namespace FinalProject
             this.Controls.Add(this.labelBoxOffice);
             this.Controls.Add(this.textBoxRotten);
             this.Controls.Add(this.labelRottenTomato);
-            this.Controls.Add(this.textBoxGenre);
             this.Controls.Add(this.labelGenre);
             this.Controls.Add(this.textBoxDirector);
             this.Controls.Add(this.labelDirector);
@@ -219,6 +231,7 @@ namespace FinalProject
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormAddMovies";
             this.Text = "Add Movies";
+            this.Load += new System.EventHandler(this.FormAddMovies_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -233,7 +246,6 @@ namespace FinalProject
         private System.Windows.Forms.Label labelYear;
         private System.Windows.Forms.TextBox textBoxDirector;
         private System.Windows.Forms.Label labelDirector;
-        private System.Windows.Forms.TextBox textBoxGenre;
         private System.Windows.Forms.Label labelGenre;
         private System.Windows.Forms.TextBox textBoxRotten;
         private System.Windows.Forms.Label labelRottenTomato;
@@ -244,5 +256,6 @@ namespace FinalProject
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonTest;
+        private System.Windows.Forms.ComboBox textBoxGenre;
     }
 }
