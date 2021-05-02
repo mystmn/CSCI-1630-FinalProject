@@ -152,15 +152,15 @@ namespace FinalProject
             // 
             this.comboBoxGenre.FormattingEnabled = true;
             this.comboBoxGenre.Items.AddRange(new object[] {
-            "example 1",
-            "example 2",
-            "example 3",
-            "example 4",
-            "example 5",
-            "example 6",
-            "example 7",
-            "example 8",
-            "example 9"});
+            "Animation",
+            "Action",
+            "Comedy",
+            "Drama",
+            "Horror",
+            "Mystery",
+            "Romance",
+            "Science Fiction",
+            "Western"});
             this.comboBoxGenre.Location = new System.Drawing.Point(140, 227);
             this.comboBoxGenre.Name = "comboBoxGenre";
             this.comboBoxGenre.Size = new System.Drawing.Size(121, 21);

@@ -73,15 +73,15 @@ namespace FinalProject
             // 
             this.textBoxGenre.FormattingEnabled = true;
             this.textBoxGenre.Items.AddRange(new object[] {
-            "example 1",
-            "example 2",
-            "example 3",
-            "example 4",
-            "example 5",
-            "example 6",
-            "example 7",
-            "example 8",
-            "example 9"});
+            "Animation",
+            "Action",
+            "Comedy",
+            "Drama",
+            "Horror",
+            "Mystery",
+            "Romance",
+            "Science Fiction",
+            "Western"});
             this.textBoxGenre.Location = new System.Drawing.Point(152, 228);
             this.textBoxGenre.Name = "textBoxGenre";
             this.textBoxGenre.Size = new System.Drawing.Size(121, 21);

@@ -29,6 +29,7 @@ namespace FinalProject
             int year;
             decimal boxOffice;
             int rotten;
+            var eachMovie = new Movie();
 
             // Verify the fields match their data type
             if (String.IsNullOrEmpty(textBoxMovieTitle.Text))
@@ -42,7 +43,7 @@ namespace FinalProject
             {
                 MessageBox.Show(errors.input(Messages.validation.Director));
             }
-            else if (String.IsNullOrEmpty(textBoxGenre.Text))
+            else if (eachMovie.genreList(textBoxGenre.Text) == -1)
             {
                 MessageBox.Show(errors.input(Messages.validation.Genre));
             }
@@ -61,77 +62,23 @@ namespace FinalProject
                  */
                 List<Movie> movies = new List<Movie>();
 
-                var eachMovie = new Movie();
-
                     eachMovie.Title = textBoxMovieTitle.Text;
                     eachMovie.Year = year;
                     eachMovie.Director = textBoxDirector.Text;
-                    eachMovie.Genre = textBoxGenre.Text;
+                    eachMovie.Genre = eachMovie.genreList(textBoxGenre.Text);
                     eachMovie.RottenTomatoesScore = rotten;
                     eachMovie.BoxOffice = boxOffice;
 
                 movies.Add(eachMovie);
 
-                // Replace with the List<Movie> Genre function
-                int genreInt = -1;
-                if (String.Equals(eachMovie.Genre,"Animation"))
-                {
-                    genreInt = 0;
-                }
-                else if (String.Equals(eachMovie.Genre, "Action"))
-                {
-                    genreInt = 1;
-
-                }
-                else if (String.Equals(eachMovie.Genre, "Comedy"))
-                {
-
-                    genreInt = 2;
-                }
-                else if (String.Equals(eachMovie.Genre, "Drama"))
-                {
-                    genreInt = 3;
-
-                }
-                else if (String.Equals(eachMovie.Genre, "Horror"))
-                {
-                    genreInt = 4;
-
-                }
-                else if (String.Equals(eachMovie.Genre, "Mystery"))
-                {
-                    genreInt = 5;
-
-                }
-                else if (String.Equals(eachMovie.Genre, "Romance"))
-                {
-                    genreInt = 6;
-
-                }
-                else if (String.Equals(eachMovie.Genre, "Science Fiction"))
-                {
-                    genreInt = 7;
-
-                }
-                else if (String.Equals(eachMovie.Genre, "Western"))
-                {
-                    genreInt = 8;
-
-                }
-                else
-                {
-                    MessageBox.Show("Please Select a Genre");
-                }
-
                 /*
                  * Establish a connection with the DB and insert code.
                  */
-
                 try
                 {
                     DB_Conn db_conn = new DB_Conn();
                     db_conn.insertData(
-                        textBoxMovieTitle.Text, year, textBoxDirector.Text, genreInt, rotten, boxOffice
+                        textBoxMovieTitle.Text, year, textBoxDirector.Text, eachMovie.genreList(textBoxGenre.Text), rotten, boxOffice
                    );
                     MessageBox.Show($"{textBoxMovieTitle.Text} has been submitted.");
                     clearFields();

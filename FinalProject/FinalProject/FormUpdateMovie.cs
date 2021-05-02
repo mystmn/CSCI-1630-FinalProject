@@ -16,6 +16,8 @@ namespace FinalProject
        
         DB_Conn conn = new DB_Conn(); // Make DB connection
 
+        Movie eachmovie = new Movie();
+
         public FormUpdateMovie()
         {
             InitializeComponent();
@@ -32,38 +34,6 @@ namespace FinalProject
             textBoxBoxOffice.Text = "";
         }
 
-        private void buttonFindMovie_Click(object sender, EventArgs e)
-        {
-            string title = textBoxTitle.Text;
-
-            // Validate input
-            if (string.IsNullOrEmpty(title))
-            {
-                MessageBox.Show(errors.input(Messages.validation.Title));
-            }
-            else
-            {
-                conn.findingTitle(title);
-
-                if (conn.FoundTitle == null)
-                {
-                    MessageBox.Show(String.Format("No movie found with that title. Try again...{0}", title));
-                }
-                else
-                {
-                    foreach (Movie x in conn.FoundTitle)
-                    {
-                        textBoxTitle.Text = $"{x.Title}";
-                        textBoxYear.Text = $"{x.Year}";
-                        textBoxDirector.Text = $"{x.Director}";
-                        textBoxRotten.Text = $"{x.RottenTomatoesScore}";
-                        textBoxBoxOffice.Text = String.Format("{0:C}", x.BoxOffice);
-                        // Need to include Genre
-                    }
-                }
-            }
-        }
-
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
             string title = textBoxTitle.Text;
@@ -76,13 +46,15 @@ namespace FinalProject
             else
             {
                 int itemID = conn.FoundTitle.Select(x => x.ID).First();
-                var itemTitle = textBoxTitle.Text;
+                string itemTitle = textBoxTitle.Text;
                 int itemYear = Convert.ToInt32(textBoxYear.Text);
                 string itemDirector = textBoxDirector.Text;
-                int itemGenre = Convert.ToInt32(textBoxGenre.Text);
+                int itemGenre = eachmovie.genreList(textBoxGenre.Text);
                 int itemScore = Convert.ToInt32(textBoxRotten.Text);
-                decimal itemBoxoffice = Convert.ToDecimal(textBoxBoxOffice.Text.Replace("$", string.Empty ));
 
+                string validateboxOffice = string.Join("", textBoxBoxOffice.Text.Where(char.IsDigit));
+                MessageBox.Show($"{validateboxOffice}");
+                decimal itemBoxoffice = Convert.ToDecimal(validateboxOffice);
 
                 string varID = conn.updateData(itemID, itemTitle, itemYear, itemDirector, itemGenre, itemScore, itemBoxoffice);
                 string returnMessage = "";
@@ -111,7 +83,7 @@ namespace FinalProject
 
         private void buttonFindMovie_Click_1(object sender, EventArgs e)
         {
-                        string title = textBoxTitle.Text;
+            string title = textBoxTitle.Text;
 
             // Validate input
             if (string.IsNullOrEmpty(title))
@@ -128,13 +100,16 @@ namespace FinalProject
                 }
                 else
                 {
-                    foreach (Movie x in conn.FoundTitle)
+                    foreach (Movie topic in conn.FoundTitle)
                     {
-                        textBoxTitle.Text = $"{x.Title}";
-                        textBoxYear.Text = $"{x.Year}";
-                        textBoxDirector.Text = $"{x.Director}";
-                        textBoxRotten.Text = $"{x.RottenTomatoesScore}";
-                        textBoxBoxOffice.Text = String.Format("{0:C}", x.BoxOffice);
+                        textBoxTitle.Text = $"{topic.Title}";
+                        textBoxYear.Text = $"{topic.Year}";
+
+                        string validatedGenre = eachmovie.genreList(topic.Genre);
+                        textBoxGenre.Text = $"{validatedGenre}";
+                        textBoxDirector.Text = $"{topic.Director}";
+                        textBoxRotten.Text = $"{topic.RottenTomatoesScore}";
+                        textBoxBoxOffice.Text = String.Format("{0:C}", topic.BoxOffice);
                         // Need to include Genre
                     }
                 }

@@ -123,8 +123,8 @@ namespace FinalProject
             string conn = MakeDBConnection();
             string sqlCommand =
                 "Update Movies " +
-                "SET Title='@param1', Year='@param2', Director='@param3', Genre='@param4', RottenTomatoesScore='@param5', TotalEarned='@param6'" +
-                "Where Id=@param0";
+                "SET Title=@param2, Year=@param3, Director=@param4, Genre=@param5, RottenTomatoesScore=@param6, TotalEarned=@param7 " +
+                "Where Id=@param8";
 
             // Make the connection with the Server
             using (SqlConnection connection = new SqlConnection(MakeDBConnection()))
@@ -133,13 +133,13 @@ namespace FinalProject
 
                 using (SqlCommand command = new SqlCommand(sqlCommand, connection))
                 {
-                    command.Parameters.Add("@param0", SqlDbType.Int, 50).Value = id;
-                    command.Parameters.Add("@param1", SqlDbType.VarChar, 50).Value = title;
-                    command.Parameters.Add("@param2", SqlDbType.Int).Value = year;
-                    command.Parameters.Add("@param3", SqlDbType.VarChar, 50).Value = director;
-                    command.Parameters.Add("@param4", SqlDbType.Int).Value = genre;
-                    command.Parameters.Add("@param5", SqlDbType.Int).Value = score;
-                    command.Parameters.Add("@param6", SqlDbType.Decimal).Value = boxOffice;
+                    command.Parameters.Add("@param2", SqlDbType.VarChar, 50).Value = title;
+                    command.Parameters.Add("@param3", SqlDbType.Int).Value = year;
+                    command.Parameters.Add("@param4", SqlDbType.VarChar, 50).Value = director;
+                    command.Parameters.Add("@param5", SqlDbType.Int).Value = genre;
+                    command.Parameters.Add("@param6", SqlDbType.Int).Value = score;
+                    command.Parameters.Add("@param7", SqlDbType.Decimal).Value = boxOffice;
+                    command.Parameters.Add("@param8", SqlDbType.Int).Value = id;
                     command.CommandType = CommandType.Text;
 
                     try
@@ -221,7 +221,7 @@ namespace FinalProject
                             movies.Title = reader.GetValue(1) != DBNull.Value ? reader.GetString(1) : null;
                             movies.Year = reader.GetValue(2) != DBNull.Value ? reader.GetInt32(2) : 0;
                             movies.Director = reader.GetValue(3) != DBNull.Value ? reader.GetString(3) : " ";
-                            movies.Genre = reader.GetValue(4) != DBNull.Value ? Convert.ToString(reader.GetInt32(4)) : "";
+                            movies.Genre = reader.GetValue(4) != DBNull.Value ? reader.GetInt32(4) : -1;
                             movies.RottenTomatoesScore = reader.GetValue(5) != DBNull.Value  ? reader.GetInt32(5) : 0;
                             movies.BoxOffice = reader.GetValue(6) != DBNull.Value ? reader.GetDecimal(6) : 0.0m;
 
