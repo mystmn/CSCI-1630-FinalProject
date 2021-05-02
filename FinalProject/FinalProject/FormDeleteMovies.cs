@@ -17,6 +17,7 @@ namespace FinalProject
 
         // Make DB connection
         DB_Conn conn = new DB_Conn();
+
         public FormDeleteMovies()
         {
             InitializeComponent();
@@ -44,10 +45,15 @@ namespace FinalProject
                 }
                 else
                 {
+                    Movie topic = new Movie();
+
                     foreach (Movie x in conn.FoundTitle)
                     {
                         textBoxMovieTitle.Text = $"{x.Title}";
                         textBoxYear.Text = $"{x.Year}";
+                        string validatedGenre = topic.genreList(x.Genre);
+                        comboBoxGenre.Text = $"{validatedGenre}";
+
                         textBoxDirector.Text = $"{x.Director}";
                         textBoxRotten.Text = $"{x.RottenTomatoesScore}";
                         textBoxBoxOffice.Text = String.Format("{0:C}", x.BoxOffice);

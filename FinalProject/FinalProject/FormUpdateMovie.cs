@@ -53,7 +53,6 @@ namespace FinalProject
                 int itemScore = Convert.ToInt32(textBoxRotten.Text);
 
                 string validateboxOffice = string.Join("", textBoxBoxOffice.Text.Where(char.IsDigit));
-                MessageBox.Show($"{validateboxOffice}");
                 decimal itemBoxoffice = Convert.ToDecimal(validateboxOffice);
 
                 string varID = conn.updateData(itemID, itemTitle, itemYear, itemDirector, itemGenre, itemScore, itemBoxoffice);
