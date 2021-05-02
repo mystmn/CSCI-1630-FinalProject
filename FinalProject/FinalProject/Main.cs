@@ -71,5 +71,13 @@ namespace FinalProject
             dataGridViewMaster.Refresh();
 
         }
+
+        /*
+         * Information about our app and team goes here.
+         */
+        private void toolStripMenuAbout(object sender, EventArgs e)
+        {
+            MessageBox.Show("We still need content here.");
+        }
     }
 }

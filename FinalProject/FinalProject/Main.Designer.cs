@@ -74,21 +74,21 @@ namespace FinalProject
             // addMovieToolStripMenuItem
             // 
             this.addMovieToolStripMenuItem.Name = "addMovieToolStripMenuItem";
-            this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addMovieToolStripMenuItem.Text = "Add Movie";
             this.addMovieToolStripMenuItem.Click += new System.EventHandler(this.addMovieToolStripMenuItem_Click);
             // 
             // updateMovieToolStripMenuItem
             // 
             this.updateMovieToolStripMenuItem.Name = "updateMovieToolStripMenuItem";
-            this.updateMovieToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.updateMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateMovieToolStripMenuItem.Text = "Update Movie";
             this.updateMovieToolStripMenuItem.Click += new System.EventHandler(this.updateMovieToolStripMenuItem_Click);
             // 
             // deleteMovieToolStripMenuItem
             // 
             this.deleteMovieToolStripMenuItem.Name = "deleteMovieToolStripMenuItem";
-            this.deleteMovieToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.deleteMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteMovieToolStripMenuItem.Text = "Delete Movie";
             this.deleteMovieToolStripMenuItem.Click += new System.EventHandler(this.deleteMovieToolStripMenuItem_Click);
             // 
@@ -97,6 +97,7 @@ namespace FinalProject
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(52, 20);
             this.toolStripMenuItem1.Text = "About";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuAbout);
             // 
             // dataGridViewMaster
             // 
