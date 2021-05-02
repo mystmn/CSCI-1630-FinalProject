@@ -44,7 +44,6 @@ namespace FinalProject
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonTest = new System.Windows.Forms.Button();
             this.textBoxGenre = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +69,7 @@ namespace FinalProject
             this.textBoxYear.Location = new System.Drawing.Point(168, 106);
             this.textBoxYear.Name = "textBoxYear";
             this.textBoxYear.Size = new System.Drawing.Size(100, 20);
-            this.textBoxYear.TabIndex = 3;
+            this.textBoxYear.TabIndex = 2;
             // 
             // labelYear
             // 
@@ -86,7 +85,7 @@ namespace FinalProject
             this.textBoxDirector.Location = new System.Drawing.Point(168, 182);
             this.textBoxDirector.Name = "textBoxDirector";
             this.textBoxDirector.Size = new System.Drawing.Size(172, 20);
-            this.textBoxDirector.TabIndex = 5;
+            this.textBoxDirector.TabIndex = 4;
             // 
             // labelDirector
             // 
@@ -110,8 +109,9 @@ namespace FinalProject
             // 
             this.textBoxRotten.Location = new System.Drawing.Point(486, 106);
             this.textBoxRotten.Name = "textBoxRotten";
+            this.textBoxRotten.ShortcutsEnabled = false;
             this.textBoxRotten.Size = new System.Drawing.Size(143, 20);
-            this.textBoxRotten.TabIndex = 9;
+            this.textBoxRotten.TabIndex = 3;
             // 
             // labelRottenTomato
             // 
@@ -127,7 +127,7 @@ namespace FinalProject
             this.textBoxBoxOffice.Location = new System.Drawing.Point(486, 182);
             this.textBoxBoxOffice.Name = "textBoxBoxOffice";
             this.textBoxBoxOffice.Size = new System.Drawing.Size(143, 20);
-            this.textBoxBoxOffice.TabIndex = 11;
+            this.textBoxBoxOffice.TabIndex = 5;
             // 
             // labelBoxOffice
             // 
@@ -143,7 +143,7 @@ namespace FinalProject
             this.buttonAdd.Location = new System.Drawing.Point(93, 376);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 12;
+            this.buttonAdd.TabIndex = 7;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
@@ -153,7 +153,7 @@ namespace FinalProject
             this.buttonClear.Location = new System.Drawing.Point(360, 376);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(75, 23);
-            this.buttonClear.TabIndex = 13;
+            this.buttonClear.TabIndex = 8;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
@@ -163,7 +163,7 @@ namespace FinalProject
             this.buttonClose.Location = new System.Drawing.Point(554, 376);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(75, 23);
-            this.buttonClose.TabIndex = 14;
+            this.buttonClose.TabIndex = 9;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = true;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
@@ -177,16 +177,6 @@ namespace FinalProject
             this.pictureBox1.Size = new System.Drawing.Size(776, 98);
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
-            // 
-            // buttonTest
-            // 
-            this.buttonTest.Location = new System.Drawing.Point(12, 12);
-            this.buttonTest.Name = "buttonTest";
-            this.buttonTest.Size = new System.Drawing.Size(75, 23);
-            this.buttonTest.TabIndex = 16;
-            this.buttonTest.Text = "Test";
-            this.buttonTest.UseVisualStyleBackColor = true;
-            this.buttonTest.Click += new System.EventHandler(this.buttonTest_Click);
             // 
             // textBoxGenre
             // 
@@ -204,7 +194,7 @@ namespace FinalProject
             this.textBoxGenre.Location = new System.Drawing.Point(168, 257);
             this.textBoxGenre.Name = "textBoxGenre";
             this.textBoxGenre.Size = new System.Drawing.Size(172, 21);
-            this.textBoxGenre.TabIndex = 18;
+            this.textBoxGenre.TabIndex = 6;
             this.textBoxGenre.SelectedIndexChanged += new System.EventHandler(this.textBoxGenre_SelectedIndexChanged);
             // 
             // FormAddMovies
@@ -213,7 +203,6 @@ namespace FinalProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.textBoxGenre);
-            this.Controls.Add(this.buttonTest);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonAdd);
@@ -255,7 +244,6 @@ namespace FinalProject
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button buttonTest;
         private System.Windows.Forms.ComboBox textBoxGenre;
     }
 }

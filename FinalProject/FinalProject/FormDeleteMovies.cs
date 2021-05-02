@@ -57,7 +57,6 @@ namespace FinalProject
                         textBoxDirector.Text = $"{x.Director}";
                         textBoxRotten.Text = $"{x.RottenTomatoesScore}";
                         textBoxBoxOffice.Text = String.Format("{0:C}", x.BoxOffice);
-                        // Need to include Genre
                     }
                 }
             }

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FinalProject
 {
-    public partial class FormAddMovies : Form 
+    public partial class FormAddMovies : Form
     {
         // Pull the default error messages
         Messages errors = new Messages();
@@ -35,7 +35,8 @@ namespace FinalProject
             if (String.IsNullOrEmpty(textBoxMovieTitle.Text))
             {
                 MessageBox.Show(errors.input(Messages.validation.Title));
-            }else if(!int.TryParse(textBoxYear.Text, out year))
+            }
+            else if (!int.TryParse(textBoxYear.Text, out year))
             {
                 MessageBox.Show(errors.input(Messages.validation.Year));
             }
@@ -51,7 +52,8 @@ namespace FinalProject
             {
                 MessageBox.Show(errors.input(Messages.validation.Rotten));
 
-            }else if (!decimal.TryParse(textBoxBoxOffice.Text, out boxOffice))
+            }
+            else if (!decimal.TryParse(textBoxBoxOffice.Text, out boxOffice))
             {
                 MessageBox.Show(errors.input(Messages.validation.BoxOffice));
             }
@@ -62,12 +64,12 @@ namespace FinalProject
                  */
                 List<Movie> movies = new List<Movie>();
 
-                    eachMovie.Title = textBoxMovieTitle.Text;
-                    eachMovie.Year = year;
-                    eachMovie.Director = textBoxDirector.Text;
-                    eachMovie.Genre = eachMovie.genreList(textBoxGenre.Text);
-                    eachMovie.RottenTomatoesScore = rotten;
-                    eachMovie.BoxOffice = boxOffice;
+                eachMovie.Title = textBoxMovieTitle.Text;
+                eachMovie.Year = year;
+                eachMovie.Director = textBoxDirector.Text;
+                eachMovie.Genre = eachMovie.genreList(textBoxGenre.Text);
+                eachMovie.RottenTomatoesScore = rotten;
+                eachMovie.BoxOffice = boxOffice;
 
                 movies.Add(eachMovie);
 
@@ -91,9 +93,9 @@ namespace FinalProject
                 {
                     Close();
                 }
-                
+
             }
-            
+
         }
         private void clearFields()
         {
@@ -137,7 +139,7 @@ namespace FinalProject
 
         private void textBoxGenre_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void FormAddMovies_Load(object sender, EventArgs e)
