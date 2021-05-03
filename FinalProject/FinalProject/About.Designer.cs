@@ -36,11 +36,14 @@ namespace FinalProject
             // 
             // richTextBox2
             // 
+            this.richTextBox2.DetectUrls = false;
             this.richTextBox2.Location = new System.Drawing.Point(22, 12);
             this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
             this.richTextBox2.Size = new System.Drawing.Size(520, 246);
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = resources.GetString("richTextBox2.Text");
+            this.richTextBox2.TextChanged += new System.EventHandler(this.richTextBox2_TextChanged);
             // 
             // CloseButton
             // 
