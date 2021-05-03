@@ -77,7 +77,8 @@ namespace FinalProject
          */
         private void toolStripMenuAbout(object sender, EventArgs e)
         {
-            MessageBox.Show("We still need content here.");
+            var about = new aboutForm();
+            about.Show();
         }
     }
 }

@@ -57,3 +57,4 @@ C:\Users\xxDIERxx\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\
 C:\Users\xxDIERxx\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
 C:\Users\xxDIERxx\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.exe
 C:\Users\xxDIERxx\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
+C:\Users\xxDIERxx\Source\Repos\CSCI-1630-FinalProject\FinalProject\FinalProject\obj\Debug\FinalProject.aboutForm.resources

@@ -74,21 +74,21 @@ namespace FinalProject
             // addMovieToolStripMenuItem
             // 
             this.addMovieToolStripMenuItem.Name = "addMovieToolStripMenuItem";
-            this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addMovieToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.addMovieToolStripMenuItem.Text = "Add Movie";
             this.addMovieToolStripMenuItem.Click += new System.EventHandler(this.addMovieToolStripMenuItem_Click);
             // 
             // updateMovieToolStripMenuItem
             // 
             this.updateMovieToolStripMenuItem.Name = "updateMovieToolStripMenuItem";
-            this.updateMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateMovieToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.updateMovieToolStripMenuItem.Text = "Update Movie";
             this.updateMovieToolStripMenuItem.Click += new System.EventHandler(this.updateMovieToolStripMenuItem_Click);
             // 
             // deleteMovieToolStripMenuItem
             // 
             this.deleteMovieToolStripMenuItem.Name = "deleteMovieToolStripMenuItem";
-            this.deleteMovieToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteMovieToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.deleteMovieToolStripMenuItem.Text = "Delete Movie";
             this.deleteMovieToolStripMenuItem.Click += new System.EventHandler(this.deleteMovieToolStripMenuItem_Click);
             // 
